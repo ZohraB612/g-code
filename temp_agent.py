@@ -1818,9 +1818,6 @@ Pro Tips:
                     
                     if tool_result:
                         step_results.append(tool_result)
-                        
-                        # Check if the tool execution failed
-                        if isinstance(tool_result, dict) and "Error:" in str(tool_result.get('result', '')):
                             print(self.ui.error(f"Tool execution failed: {tool_result['result']}"))
                             step_successful = False
                             break

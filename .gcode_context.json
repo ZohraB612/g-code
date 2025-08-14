@@ -1,30 +1,10 @@
 {
   "conversation_history": [],
   "project_insights": {
-    "total_python_files": 1910,
-    "main_files": [
-      "__main__.py",
-      "__main__.py",
-      "__main__.py",
-      "__main__.py",
-      "__main__.py",
-      "main.py",
-      "main.py",
-      "__main__.py",
-      "main.py",
-      "__main__.py",
-      "__main__.py",
-      "__main__.py",
-      "__main__.py",
-      "__main__.py",
-      "main.py",
-      "__main__.py",
-      "main.py"
-    ],
-    "has_requirements": true,
-    "has_setup": true,
-    "project_structure": ".\n\u251c\u2500\u2500 docker-compose.yml\n\u251c\u2500\u2500 Dockerfile\n\u251c\u2500\u2500 gcode\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 agent.py\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 cli.py\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 docker-compose.yml\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 Dockerfile\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 file_watcher.py\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 __pycache__\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 setup.py\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 test_docker.py\n\u2502\u00a0\u00a0 \u2514\u2500\u2500 tools.py\n\u251c\u2500\u2500 __init__.py\n\u251c\u2500\u2500 __pycache__\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 agent.cpython-311.pyc\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 agent.cpython-312.pyc\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 cli.cpython-312.pyc\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 __init__.cpython-311.pyc\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 __init__.cpython-312.pyc\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 tools.cpython-311.pyc\n\u2502\u00a0\u00a0 \u2514\u2500\u2500 tools.cpython-312.pyc\n\u251c\u2500\u2500 README.md\n\u251c\u2500\u2500 requirements.txt\n\u251c\u2500\u2500 run_devcontainer_gcode.ps1\n\u251c\u2500\u2500 run_devcontainer_gcode.sh\n\u251c\u2500\u2500 setup.py\n\u251c\u2500\u2500 test_advanced_features.py\n\u251c\u2500\u2500 test_collapsible.py\n\u251c\u2500\u2500 test_docker.py\n\u251c\u2500\u2500 test_file_watching.py\n\u251c\u2500\u2500 test_openai_integration.py\n\u251c\u2500\u2500 tests\n\u2502\u00a0\u00a0 \u2514\u2500\u2500 test_property_agent.py\n\u2514\u2500\u2500 venv\n    \u251c\u2500\u2500 bin\n    \u251c\u2500\u2500 include\n    \u251c\u2500\u2500 lib\n    \u251c\u2500\u2500 lib64 -> lib\n    \u2514\u2500\u2500 pyvenv.cfg\n\n10 directories, 30 files\n"
+    "total_python_files": 1913,
+    "knowledge_graph_files": 32,
+    "has_deep_analysis": true
   },
-  "last_analysis": "2025-08-14T21:17:46.309089",
-  "last_updated": "2025-08-14T21:17:46.309098"
+  "last_analysis": "2025-08-14T23:08:16.002202",
+  "knowledge_graph_files": 32
 }

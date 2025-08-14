@@ -1,0 +1,4083 @@
+{
+  "__metadata__": {
+    "version": "1.0",
+    "created": "2025-08-14T23:08:15.979546",
+    "total_files": 32,
+    "analyzer_version": "1.0"
+  },
+  "/home/zohra-bouchamaoui/Desktop/gcode/setup.py": {
+    "path": "setup.py",
+    "absolute_path": "/home/zohra-bouchamaoui/Desktop/gcode/setup.py",
+    "file_type": "python",
+    "size": 1897,
+    "lines": 54,
+    "last_modified": "2025-08-14T20:56:09.105811",
+    "analysis_timestamp": null,
+    "imports": [],
+    "from_imports": [
+      {
+        "module": "setuptools",
+        "names": [
+          "setup",
+          "find_packages"
+        ],
+        "level": 0
+      }
+    ],
+    "functions": [],
+    "classes": [],
+    "variables": [
+      "long_description",
+      "requirements"
+    ],
+    "docstrings": [
+      "\nSetup script for gcode - Your intelligent coding companion.\nInstall globally with: pip install -e .\nThen use anywhere with: gcode\n"
+    ],
+    "complexity": 0,
+    "dependencies": [],
+    "dependents": []
+  },
+  "/home/zohra-bouchamaoui/Desktop/gcode/test_deep_understanding.py": {
+    "path": "test_deep_understanding.py",
+    "absolute_path": "/home/zohra-bouchamaoui/Desktop/gcode/test_deep_understanding.py",
+    "file_type": "python",
+    "size": 5175,
+    "lines": 155,
+    "last_modified": "2025-08-14T22:55:42.432480",
+    "analysis_timestamp": null,
+    "imports": [
+      {
+        "module": "os",
+        "alias": "os"
+      },
+      {
+        "module": "sys",
+        "alias": "sys"
+      }
+    ],
+    "from_imports": [
+      {
+        "module": "pathlib",
+        "names": [
+          "Path"
+        ],
+        "level": 0
+      },
+      {
+        "module": "gcode.analyzer",
+        "names": [
+          "create_analyzer"
+        ],
+        "level": 0
+      },
+      {
+        "module": "gcode.tools",
+        "names": [
+          "query_codebase",
+          "deep_codebase_analysis"
+        ],
+        "level": 0
+      },
+      {
+        "module": "gcode.agent",
+        "names": [
+          "GeminiAgent"
+        ],
+        "level": 0
+      }
+    ],
+    "functions": [
+      {
+        "name": "test_deep_understanding",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Test the deep codebase understanding functionality.",
+        "decorators": [],
+        "complexity": 11
+      },
+      {
+        "name": "show_usage_examples",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Show examples of how to use the deep understanding features.",
+        "decorators": [],
+        "complexity": 1
+      },
+      {
+        "name": "main",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Run the deep understanding test suite.",
+        "decorators": [],
+        "complexity": 2
+      }
+    ],
+    "classes": [],
+    "variables": [
+      "analyzer",
+      "test_file",
+      "knowledge_graph",
+      "analysis_result",
+      "query_result",
+      "agent",
+      "arch_result",
+      "framework_result"
+    ],
+    "docstrings": [
+      "\nTest script for gcode Deep Codebase Understanding.\nThis demonstrates the \"agentic search\" capabilities that make Claude Code powerful.\n",
+      "Test the deep codebase understanding functionality.",
+      "Show examples of how to use the deep understanding features.",
+      "Run the deep understanding test suite."
+    ],
+    "complexity": 14,
+    "dependencies": [],
+    "dependents": []
+  },
+  "/home/zohra-bouchamaoui/Desktop/gcode/__init__.py": {
+    "path": "__init__.py",
+    "absolute_path": "/home/zohra-bouchamaoui/Desktop/gcode/__init__.py",
+    "file_type": "python",
+    "size": 0,
+    "lines": 1,
+    "last_modified": "2025-08-14T16:45:24.658388",
+    "analysis_timestamp": null,
+    "imports": [],
+    "from_imports": [],
+    "functions": [],
+    "classes": [],
+    "variables": [],
+    "docstrings": [],
+    "complexity": 0,
+    "dependencies": [],
+    "dependents": []
+  },
+  "/home/zohra-bouchamaoui/Desktop/gcode/test_autonomous_workflow.py": {
+    "path": "test_autonomous_workflow.py",
+    "absolute_path": "/home/zohra-bouchamaoui/Desktop/gcode/test_autonomous_workflow.py",
+    "file_type": "python",
+    "size": 4965,
+    "lines": 131,
+    "last_modified": "2025-08-14T23:05:24.383475",
+    "analysis_timestamp": null,
+    "imports": [
+      {
+        "module": "os",
+        "alias": "os"
+      },
+      {
+        "module": "sys",
+        "alias": "sys"
+      }
+    ],
+    "from_imports": [
+      {
+        "module": "pathlib",
+        "names": [
+          "Path"
+        ],
+        "level": 0
+      },
+      {
+        "module": "gcode.agent",
+        "names": [
+          "GeminiAgent"
+        ],
+        "level": 0
+      }
+    ],
+    "functions": [
+      {
+        "name": "test_autonomous_workflow",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Test the autonomous workflow functionality.",
+        "decorators": [],
+        "complexity": 8
+      },
+      {
+        "name": "show_workflow_examples",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Show examples of how to use the autonomous workflow features.",
+        "decorators": [],
+        "complexity": 1
+      },
+      {
+        "name": "main",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Run the autonomous workflow test suite.",
+        "decorators": [],
+        "complexity": 2
+      }
+    ],
+    "classes": [],
+    "variables": [
+      "agent",
+      "simple_requests",
+      "complex_workflows",
+      "test_goal",
+      "is_complex",
+      "status",
+      "is_complex",
+      "status",
+      "plan",
+      "tool_calls"
+    ],
+    "docstrings": [
+      "\nTest script for gcode Autonomous Workflow capabilities.\nThis demonstrates the end-to-end workflow execution like Claude Code.\n",
+      "Test the autonomous workflow functionality.",
+      "Show examples of how to use the autonomous workflow features.",
+      "Run the autonomous workflow test suite."
+    ],
+    "complexity": 11,
+    "dependencies": [],
+    "dependents": []
+  },
+  "/home/zohra-bouchamaoui/Desktop/gcode/tests/test_file_watching.py": {
+    "path": "tests/test_file_watching.py",
+    "absolute_path": "/home/zohra-bouchamaoui/Desktop/gcode/tests/test_file_watching.py",
+    "file_type": "python",
+    "size": 3975,
+    "lines": 135,
+    "last_modified": "2025-08-14T21:17:28.786865",
+    "analysis_timestamp": null,
+    "imports": [
+      {
+        "module": "os",
+        "alias": "os"
+      },
+      {
+        "module": "time",
+        "alias": "time"
+      },
+      {
+        "module": "tempfile",
+        "alias": "tempfile"
+      }
+    ],
+    "from_imports": [
+      {
+        "module": "pathlib",
+        "names": [
+          "Path"
+        ],
+        "level": 0
+      },
+      {
+        "module": "gcode.file_watcher",
+        "names": [
+          "create_file_watcher"
+        ],
+        "level": 0
+      },
+      {
+        "module": "gcode.agent",
+        "names": [
+          "GeminiAgent"
+        ],
+        "level": 0
+      }
+    ],
+    "functions": [
+      {
+        "name": "test_file_watching",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Test the file watching functionality.",
+        "decorators": [],
+        "complexity": 4
+      },
+      {
+        "name": "test_gcode_integration",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Test gcode integration with file watching.",
+        "decorators": [],
+        "complexity": 2
+      },
+      {
+        "name": "main",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Run all tests.",
+        "decorators": [],
+        "complexity": 4
+      }
+    ],
+    "classes": [],
+    "variables": [
+      "tests",
+      "passed",
+      "total",
+      "temp_path",
+      "agent",
+      "watcher",
+      "status",
+      "test_file"
+    ],
+    "docstrings": [
+      "\nTest script for gcode file watching functionality.\n",
+      "Test the file watching functionality.",
+      "Test gcode integration with file watching.",
+      "Run all tests."
+    ],
+    "complexity": 10,
+    "dependencies": [],
+    "dependents": []
+  },
+  "/home/zohra-bouchamaoui/Desktop/gcode/tests/test_openai_integration.py": {
+    "path": "tests/test_openai_integration.py",
+    "absolute_path": "/home/zohra-bouchamaoui/Desktop/gcode/tests/test_openai_integration.py",
+    "file_type": "python",
+    "size": 3644,
+    "lines": 113,
+    "last_modified": "2025-08-14T18:36:20.116910",
+    "analysis_timestamp": null,
+    "imports": [
+      {
+        "module": "os",
+        "alias": "os"
+      },
+      {
+        "module": "sys",
+        "alias": "sys"
+      },
+      {
+        "module": "openai",
+        "alias": "openai"
+      }
+    ],
+    "from_imports": [],
+    "functions": [
+      {
+        "name": "test_openai_integration",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Test the OpenAI integration capabilities.",
+        "decorators": [],
+        "complexity": 3
+      },
+      {
+        "name": "show_benefits",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Show the benefits of switching to OpenAI.",
+        "decorators": [],
+        "complexity": 2
+      },
+      {
+        "name": "show_migration_steps",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Show how to migrate from Gemini to OpenAI.",
+        "decorators": [],
+        "complexity": 2
+      },
+      {
+        "name": "main",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Run the OpenAI integration test.",
+        "decorators": [],
+        "complexity": 2
+      }
+    ],
+    "classes": [],
+    "variables": [
+      "api_key",
+      "benefits",
+      "steps",
+      "response",
+      "result"
+    ],
+    "docstrings": [
+      "\nTest script to demonstrate the new OpenAI API integration.\nThis shows how switching from Gemini to OpenAI improves the CLI.\n",
+      "Test the OpenAI integration capabilities.",
+      "Show the benefits of switching to OpenAI.",
+      "Show how to migrate from Gemini to OpenAI.",
+      "Run the OpenAI integration test."
+    ],
+    "complexity": 9,
+    "dependencies": [],
+    "dependents": []
+  },
+  "/home/zohra-bouchamaoui/Desktop/gcode/tests/test_docker.py": {
+    "path": "tests/test_docker.py",
+    "absolute_path": "/home/zohra-bouchamaoui/Desktop/gcode/tests/test_docker.py",
+    "file_type": "python",
+    "size": 4359,
+    "lines": 135,
+    "last_modified": "2025-08-14T20:24:43.662610",
+    "analysis_timestamp": null,
+    "imports": [
+      {
+        "module": "os",
+        "alias": "os"
+      },
+      {
+        "module": "subprocess",
+        "alias": "subprocess"
+      },
+      {
+        "module": "sys",
+        "alias": "sys"
+      }
+    ],
+    "from_imports": [],
+    "functions": [
+      {
+        "name": "test_docker_installation",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Test if Docker is installed and running.",
+        "decorators": [],
+        "complexity": 3
+      },
+      {
+        "name": "test_docker_compose",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Test if Docker Compose is available.",
+        "decorators": [],
+        "complexity": 2
+      },
+      {
+        "name": "test_gcode_docker_build",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Test building the gcode Docker image.",
+        "decorators": [],
+        "complexity": 4
+      },
+      {
+        "name": "show_docker_usage",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Show how to use gcode with Docker.",
+        "decorators": [],
+        "complexity": 1
+      },
+      {
+        "name": "main",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Run all Docker tests.",
+        "decorators": [],
+        "complexity": 4
+      }
+    ],
+    "classes": [],
+    "variables": [
+      "tests",
+      "passed",
+      "total",
+      "result",
+      "result",
+      "result",
+      "result"
+    ],
+    "docstrings": [
+      "\nTest script to verify Docker functionality for gcode.\n",
+      "Test if Docker is installed and running.",
+      "Test if Docker Compose is available.",
+      "Test building the gcode Docker image.",
+      "Show how to use gcode with Docker.",
+      "Run all Docker tests."
+    ],
+    "complexity": 14,
+    "dependencies": [],
+    "dependents": []
+  },
+  "/home/zohra-bouchamaoui/Desktop/gcode/tests/test_advanced_features.py": {
+    "path": "tests/test_advanced_features.py",
+    "absolute_path": "/home/zohra-bouchamaoui/Desktop/gcode/tests/test_advanced_features.py",
+    "file_type": "python",
+    "size": 2880,
+    "lines": 98,
+    "last_modified": "2025-08-14T18:19:45.876324",
+    "analysis_timestamp": null,
+    "imports": [
+      {
+        "module": "sys",
+        "alias": "sys"
+      },
+      {
+        "module": "os",
+        "alias": "os"
+      }
+    ],
+    "from_imports": [
+      {
+        "module": "gcode.tools",
+        "names": [
+          "git_status",
+          "monitor_code_quality_continuous",
+          "auto_fix_common_issues",
+          "run_security_scan",
+          "performance_profiling",
+          "generate_property_based_tests"
+        ],
+        "level": 0
+      }
+    ],
+    "functions": [
+      {
+        "name": "test_git_integration",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Test the advanced git integration features.",
+        "decorators": [],
+        "complexity": 2
+      },
+      {
+        "name": "test_real_time_monitoring",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Test the real-time code monitoring features.",
+        "decorators": [],
+        "complexity": 2
+      },
+      {
+        "name": "test_advanced_testing",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Test the advanced testing features.",
+        "decorators": [],
+        "complexity": 2
+      },
+      {
+        "name": "main",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Run all the advanced feature tests.",
+        "decorators": [],
+        "complexity": 1
+      }
+    ],
+    "classes": [],
+    "variables": [
+      "status",
+      "quality",
+      "fixes",
+      "security",
+      "performance",
+      "tests"
+    ],
+    "docstrings": [
+      "\nTest script to demonstrate the new advanced features of the Gemini Agent CLI.\nThis shows what we've built beyond Cursor/Claude Code capabilities.\n",
+      "Test the advanced git integration features.",
+      "Test the real-time code monitoring features.",
+      "Test the advanced testing features.",
+      "Run all the advanced feature tests."
+    ],
+    "complexity": 7,
+    "dependencies": [],
+    "dependents": []
+  },
+  "/home/zohra-bouchamaoui/Desktop/gcode/tests/test_collapsible.py": {
+    "path": "tests/test_collapsible.py",
+    "absolute_path": "/home/zohra-bouchamaoui/Desktop/gcode/tests/test_collapsible.py",
+    "file_type": "python",
+    "size": 2723,
+    "lines": 85,
+    "last_modified": "2025-08-14T19:14:12.008723",
+    "analysis_timestamp": null,
+    "imports": [
+      {
+        "module": "sys",
+        "alias": "sys"
+      }
+    ],
+    "from_imports": [
+      {
+        "module": "gcode.agent",
+        "names": [
+          "ProfessionalUI"
+        ],
+        "level": 0
+      }
+    ],
+    "functions": [
+      {
+        "name": "test_collapsible_sections",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Test the collapsible sections functionality.",
+        "decorators": [],
+        "complexity": 10
+      }
+    ],
+    "classes": [],
+    "variables": [
+      "ui",
+      "cmd",
+      "section_num"
+    ],
+    "docstrings": [
+      "\nSimple test script to demonstrate working collapsible sections.\n",
+      "Test the collapsible sections functionality."
+    ],
+    "complexity": 10,
+    "dependencies": [],
+    "dependents": []
+  },
+  "/home/zohra-bouchamaoui/Desktop/gcode/tests/test_property_agent.py": {
+    "path": "tests/test_property_agent.py",
+    "absolute_path": "/home/zohra-bouchamaoui/Desktop/gcode/tests/test_property_agent.py",
+    "file_type": "python",
+    "size": 6505,
+    "lines": 146,
+    "last_modified": "2025-08-14T18:20:31.049044",
+    "analysis_timestamp": null,
+    "imports": [
+      {
+        "module": "pytest",
+        "alias": "pytest"
+      },
+      {
+        "module": "sys",
+        "alias": "sys"
+      }
+    ],
+    "from_imports": [
+      {
+        "module": "hypothesis",
+        "names": [
+          "given",
+          "strategies"
+        ],
+        "level": 0
+      },
+      {
+        "module": "pathlib",
+        "names": [
+          "Path"
+        ],
+        "level": 0
+      },
+      {
+        "module": "agent",
+        "names": [
+          "*"
+        ],
+        "level": 0
+      }
+    ],
+    "functions": [
+      {
+        "name": "test_colored_properties",
+        "args": [
+          "text",
+          "color"
+        ],
+        "defaults": 0,
+        "docstring": "Property-based test for colored function.",
+        "decorators": [
+          "given"
+        ],
+        "complexity": 2
+      },
+      {
+        "name": "test___init___properties",
+        "args": [
+          "project_root"
+        ],
+        "defaults": 0,
+        "docstring": "Property-based test for __init__ function.",
+        "decorators": [
+          "given"
+        ],
+        "complexity": 2
+      },
+      {
+        "name": "test_add_interaction_properties",
+        "args": [
+          "user_input",
+          "agent_response",
+          "tools_used"
+        ],
+        "defaults": 0,
+        "docstring": "Property-based test for add_interaction function.",
+        "decorators": [
+          "given"
+        ],
+        "complexity": 2
+      },
+      {
+        "name": "test_get_relevant_context_properties",
+        "args": [
+          "current_request"
+        ],
+        "defaults": 0,
+        "docstring": "Property-based test for get_relevant_context function.",
+        "decorators": [
+          "given"
+        ],
+        "complexity": 2
+      },
+      {
+        "name": "test___init___properties",
+        "args": [
+          "model_name"
+        ],
+        "defaults": 0,
+        "docstring": "Property-based test for __init__ function.",
+        "decorators": [
+          "given"
+        ],
+        "complexity": 2
+      },
+      {
+        "name": "test_converse_properties",
+        "args": [
+          "prompt",
+          "interactive"
+        ],
+        "defaults": 0,
+        "docstring": "Property-based test for converse function.",
+        "decorators": [
+          "given"
+        ],
+        "complexity": 2
+      },
+      {
+        "name": "test__process_request_properties",
+        "args": [
+          "prompt"
+        ],
+        "defaults": 0,
+        "docstring": "Property-based test for _process_request function.",
+        "decorators": [
+          "given"
+        ],
+        "complexity": 2
+      },
+      {
+        "name": "test__enhance_prompt_with_context_properties",
+        "args": [
+          "prompt",
+          "relevant_context"
+        ],
+        "defaults": 0,
+        "docstring": "Property-based test for _enhance_prompt_with_context function.",
+        "decorators": [
+          "given"
+        ],
+        "complexity": 2
+      },
+      {
+        "name": "test__provide_proactive_suggestions_properties",
+        "args": [
+          "original_request",
+          "tools_used"
+        ],
+        "defaults": 0,
+        "docstring": "Property-based test for _provide_proactive_suggestions function.",
+        "decorators": [
+          "given"
+        ],
+        "complexity": 2
+      },
+      {
+        "name": "test__check_for_more_work_properties",
+        "args": [
+          "original_prompt",
+          "executed_plan"
+        ],
+        "defaults": 0,
+        "docstring": "Property-based test for _check_for_more_work function.",
+        "decorators": [
+          "given"
+        ],
+        "complexity": 2
+      },
+      {
+        "name": "test__execute_tool_properties",
+        "args": [
+          "tool_call",
+          "current",
+          "total"
+        ],
+        "defaults": 0,
+        "docstring": "Property-based test for _execute_tool function.",
+        "decorators": [
+          "given"
+        ],
+        "complexity": 2
+      }
+    ],
+    "classes": [],
+    "variables": [
+      "result",
+      "result",
+      "result",
+      "result",
+      "result",
+      "result",
+      "result",
+      "result",
+      "result",
+      "result",
+      "result"
+    ],
+    "docstrings": [
+      "Property-based test for colored function.",
+      "Property-based test for __init__ function.",
+      "Property-based test for add_interaction function.",
+      "Property-based test for get_relevant_context function.",
+      "Property-based test for __init__ function.",
+      "Property-based test for converse function.",
+      "Property-based test for _process_request function.",
+      "Property-based test for _enhance_prompt_with_context function.",
+      "Property-based test for _provide_proactive_suggestions function.",
+      "Property-based test for _check_for_more_work function.",
+      "Property-based test for _execute_tool function."
+    ],
+    "complexity": 22,
+    "dependencies": [],
+    "dependents": []
+  },
+  "/home/zohra-bouchamaoui/Desktop/gcode/gcode/setup.py": {
+    "path": "gcode/setup.py",
+    "absolute_path": "/home/zohra-bouchamaoui/Desktop/gcode/gcode/setup.py",
+    "file_type": "python",
+    "size": 1897,
+    "lines": 54,
+    "last_modified": "2025-08-14T20:31:50.075886",
+    "analysis_timestamp": null,
+    "imports": [],
+    "from_imports": [
+      {
+        "module": "setuptools",
+        "names": [
+          "setup",
+          "find_packages"
+        ],
+        "level": 0
+      }
+    ],
+    "functions": [],
+    "classes": [],
+    "variables": [
+      "long_description",
+      "requirements"
+    ],
+    "docstrings": [
+      "\nSetup script for gcode - Your intelligent coding companion.\nInstall globally with: pip install -e .\nThen use anywhere with: gcode\n"
+    ],
+    "complexity": 0,
+    "dependencies": [],
+    "dependents": []
+  },
+  "/home/zohra-bouchamaoui/Desktop/gcode/gcode/tools.py": {
+    "path": "gcode/tools.py",
+    "absolute_path": "/home/zohra-bouchamaoui/Desktop/gcode/gcode/tools.py",
+    "file_type": "python",
+    "size": 49340,
+    "lines": 1229,
+    "last_modified": "2025-08-14T22:52:47.517741",
+    "analysis_timestamp": null,
+    "imports": [
+      {
+        "module": "subprocess",
+        "alias": "subprocess"
+      },
+      {
+        "module": "os",
+        "alias": "os"
+      },
+      {
+        "module": "ast",
+        "alias": "ast"
+      },
+      {
+        "module": "re",
+        "alias": "re"
+      },
+      {
+        "module": "json",
+        "alias": "json"
+      }
+    ],
+    "from_imports": [
+      {
+        "module": "pathlib",
+        "names": [
+          "Path"
+        ],
+        "level": 0
+      },
+      {
+        "module": "analyzer",
+        "names": [
+          "create_analyzer"
+        ],
+        "level": 1
+      }
+    ],
+    "functions": [
+      {
+        "name": "read_file",
+        "args": [
+          "path"
+        ],
+        "defaults": 0,
+        "docstring": "Reads the content of a file.\nArgs:\n    path: The path to the file to be read.\nReturns:\n    The content of the file.",
+        "decorators": [],
+        "complexity": 2
+      },
+      {
+        "name": "write_file",
+        "args": [
+          "path",
+          "content"
+        ],
+        "defaults": 0,
+        "docstring": "Writes content to a file, creating it if it doesn't exist.\nArgs:\n    path: The path to the file.\n    content: The content to be written to the file.\nReturns:\n    A confirmation message.",
+        "decorators": [],
+        "complexity": 2
+      },
+      {
+        "name": "run_shell_command",
+        "args": [
+          "command"
+        ],
+        "defaults": 0,
+        "docstring": "Executes a shell command and returns its output.\nArgs:\n    command: The shell command to be executed.\nReturns:\n    The stdout and stderr of the command.",
+        "decorators": [],
+        "complexity": 2
+      },
+      {
+        "name": "get_project_structure",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Returns a string representing the project's file structure.\nThis helps the agent understand the project layout.",
+        "decorators": [],
+        "complexity": 5
+      },
+      {
+        "name": "analyze_python_file",
+        "args": [
+          "file_path"
+        ],
+        "defaults": 0,
+        "docstring": "Analyzes a Python file for code quality, structure, and potential improvements.\nArgs:\n    file_path: The path to the Python file to analyze.\nReturns:\n    A detailed analysis report.",
+        "decorators": [],
+        "complexity": 19
+      },
+      {
+        "name": "create_test_file",
+        "args": [
+          "source_file"
+        ],
+        "defaults": 0,
+        "docstring": "Creates a basic test file for a given Python source file.\nArgs:\n    source_file: The path to the source Python file to create tests for.\nReturns:\n    A confirmation message with the test file path.",
+        "decorators": [],
+        "complexity": 5
+      },
+      {
+        "name": "search_code",
+        "args": [
+          "query",
+          "directory"
+        ],
+        "defaults": 1,
+        "docstring": "Searches for code patterns, functions, or text across Python files in a directory.\nArgs:\n    query: The search query (function name, class name, or text to search for).\n    directory: The directory to search in (default: current directory).\nReturns:\n    Search results with file locations and context.",
+        "decorators": [],
+        "complexity": 13
+      },
+      {
+        "name": "install_dependencies",
+        "args": [
+          "requirements_file"
+        ],
+        "defaults": 1,
+        "docstring": "Installs Python dependencies from a requirements file.\nArgs:\n    requirements_file: Path to the requirements file (default: requirements.txt).\nReturns:\n    Installation status and output.",
+        "decorators": [],
+        "complexity": 5
+      },
+      {
+        "name": "run_tests",
+        "args": [
+          "test_directory"
+        ],
+        "defaults": 1,
+        "docstring": "Runs Python tests in the specified directory.\nArgs:\n    test_directory: Directory containing test files (default: tests).\nReturns:\n    Test execution results.",
+        "decorators": [],
+        "complexity": 6
+      },
+      {
+        "name": "git_status",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Gets the current git status with detailed information about changes.\nReturns:\n    Detailed git status information.",
+        "decorators": [],
+        "complexity": 3
+      },
+      {
+        "name": "git_commit_with_ai_message",
+        "args": [
+          "files"
+        ],
+        "defaults": 1,
+        "docstring": "Commits changes with an AI-generated commit message based on the changes.\nArgs:\n    files: Files to commit (default: \".\" for all changes).\nReturns:\n    Commit result with the generated message.",
+        "decorators": [],
+        "complexity": 6
+      },
+      {
+        "name": "_generate_commit_message",
+        "args": [
+          "changes"
+        ],
+        "defaults": 0,
+        "docstring": "Generate a meaningful commit message based on the changes.",
+        "decorators": [],
+        "complexity": 8
+      },
+      {
+        "name": "git_resolve_conflicts",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Attempts to automatically resolve git merge conflicts.\nReturns:\n    Status of conflict resolution.",
+        "decorators": [],
+        "complexity": 8
+      },
+      {
+        "name": "git_smart_branch",
+        "args": [
+          "operation",
+          "branch_name"
+        ],
+        "defaults": 1,
+        "docstring": "Performs intelligent git branch operations with safety checks.\nArgs:\n    operation: Branch operation ('create', 'switch', 'merge', 'delete').\n    branch_name: Name of the branch (required for most operations).\nReturns:\n    Result of the branch operation.",
+        "decorators": [],
+        "complexity": 14
+      },
+      {
+        "name": "monitor_code_quality_continuous",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Continuously monitors code quality and provides real-time feedback.\nReturns:\n    Current code quality status and recommendations.",
+        "decorators": [],
+        "complexity": 9
+      },
+      {
+        "name": "auto_fix_common_issues",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Automatically fixes common code quality issues.\nReturns:\n    Report of fixes applied.",
+        "decorators": [],
+        "complexity": 8
+      },
+      {
+        "name": "generate_property_based_tests",
+        "args": [
+          "source_file"
+        ],
+        "defaults": 0,
+        "docstring": "Generates property-based tests using hypothesis for a Python file.\nArgs:\n    source_file: The source Python file to generate tests for.\nReturns:\n    Generated property-based test file.",
+        "decorators": [],
+        "complexity": 8
+      },
+      {
+        "name": "run_security_scan",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Runs a basic security scan on Python files for common vulnerabilities.\nReturns:\n    Security scan results and recommendations.",
+        "decorators": [],
+        "complexity": 13
+      },
+      {
+        "name": "performance_profiling",
+        "args": [
+          "file_path"
+        ],
+        "defaults": 1,
+        "docstring": "Performs basic performance profiling on Python code.\nArgs:\n    file_path: Specific file to profile (default: None for project-wide).\nReturns:\n    Performance analysis and recommendations.",
+        "decorators": [],
+        "complexity": 16
+      },
+      {
+        "name": "query_codebase",
+        "args": [
+          "question"
+        ],
+        "defaults": 0,
+        "docstring": "Answers questions about the codebase using the knowledge graph.\nThis provides the \"agentic search\" capability that makes Claude Code powerful.\n\nArgs:\n    question: The question to ask about the codebase.\nReturns:\n    The answer to the question based on deep codebase understanding.",
+        "decorators": [],
+        "complexity": 46
+      },
+      {
+        "name": "deep_codebase_analysis",
+        "args": [
+          "force_reanalysis"
+        ],
+        "defaults": 1,
+        "docstring": "Performs a deep analysis of the entire codebase to build comprehensive understanding.\nThis is the core feature that provides \"agentic search\" capabilities.\n\nArgs:\n    force_reanalysis: If True, reanalyze all files even if unchanged\n    \nReturns:\n    Summary of the deep analysis results",
+        "decorators": [],
+        "complexity": 2
+      },
+      {
+        "name": "analyze_code_quality",
+        "args": [
+          "file_path"
+        ],
+        "defaults": 1,
+        "docstring": "Analyzes code quality across the project or specific files.\n\nArgs:\n    file_path: Specific file to analyze, or None for project-wide analysis\n    \nReturns:\n    Code quality report",
+        "decorators": [],
+        "complexity": 9
+      }
+    ],
+    "classes": [],
+    "variables": [
+      "AVAILABLE_TOOLS",
+      "lines_added",
+      "lines_removed",
+      "result",
+      "output",
+      "result",
+      "analysis",
+      "lines",
+      "total_lines",
+      "code_lines",
+      "comment_lines",
+      "empty_lines",
+      "long_lines",
+      "todo_pattern",
+      "todos",
+      "print_statements",
+      "source_path",
+      "test_dir",
+      "test_file",
+      "test_content",
+      "results",
+      "query_lower",
+      "output",
+      "result",
+      "output",
+      "result",
+      "output",
+      "result",
+      "diff_result",
+      "changes",
+      "message",
+      "commit_result",
+      "status_result",
+      "conflicted_files",
+      "output",
+      "output",
+      "python_files",
+      "issues",
+      "output",
+      "fixes_applied",
+      "python_files",
+      "source_path",
+      "test_dir",
+      "test_file",
+      "test_content",
+      "output",
+      "vulnerabilities",
+      "python_files",
+      "output",
+      "performance_issues",
+      "knowledge_graph_file",
+      "knowledge_graph",
+      "question",
+      "analyzer",
+      "knowledge_graph",
+      "arch",
+      "patterns",
+      "summary",
+      "project_structure",
+      "content",
+      "tree",
+      "functions",
+      "classes",
+      "imports",
+      "content",
+      "tree",
+      "functions",
+      "classes",
+      "diff_result",
+      "content",
+      "tree",
+      "functions",
+      "strategies",
+      "files_to_check",
+      "files_to_check",
+      "knowledge_graph",
+      "file_name",
+      "knowledge_graph_file",
+      "python_files",
+      "total_issues",
+      "total_todos",
+      "total_prints",
+      "high_complexity_files",
+      "summary",
+      "filenames",
+      "level",
+      "indent",
+      "subindent",
+      "matches",
+      "file_path",
+      "resolved_content",
+      "result",
+      "original_content",
+      "content",
+      "content",
+      "content",
+      "lines",
+      "import_lines",
+      "other_lines",
+      "file_name",
+      "result",
+      "knowledge_graph",
+      "args",
+      "methods",
+      "content",
+      "lines",
+      "content",
+      "current",
+      "result",
+      "content",
+      "content",
+      "content",
+      "content",
+      "content",
+      "lines",
+      "funcs",
+      "arch_file",
+      "context_start",
+      "context_end",
+      "context_lines",
+      "current",
+      "deps",
+      "patterns_file",
+      "data",
+      "arch",
+      "search_term",
+      "matching_files",
+      "overview",
+      "data",
+      "patterns",
+      "result",
+      "complex_files",
+      "frameworks",
+      "testing",
+      "build_tools",
+      "result",
+      "result",
+      "arch_file",
+      "data",
+      "arch",
+      "overview",
+      "test_files",
+      "main_modules",
+      "coverage"
+    ],
+    "docstrings": [
+      "\n    Reads the content of a file.\n    Args:\n        path: The path to the file to be read.\n    Returns:\n        The content of the file.\n    ",
+      "\n    Writes content to a file, creating it if it doesn't exist.\n    Args:\n        path: The path to the file.\n        content: The content to be written to the file.\n    Returns:\n        A confirmation message.\n    ",
+      "\n    Executes a shell command and returns its output.\n    Args:\n        command: The shell command to be executed.\n    Returns:\n        The stdout and stderr of the command.\n    ",
+      "\n    Returns a string representing the project's file structure.\n    This helps the agent understand the project layout.\n    ",
+      "\n    Analyzes a Python file for code quality, structure, and potential improvements.\n    Args:\n        file_path: The path to the Python file to analyze.\n    Returns:\n        A detailed analysis report.\n    ",
+      "\n    Creates a basic test file for a given Python source file.\n    Args:\n        source_file: The path to the source Python file to create tests for.\n    Returns:\n        A confirmation message with the test file path.\n    ",
+      "\n    Searches for code patterns, functions, or text across Python files in a directory.\n    Args:\n        query: The search query (function name, class name, or text to search for).\n        directory: The directory to search in (default: current directory).\n    Returns:\n        Search results with file locations and context.\n    ",
+      "\n    Installs Python dependencies from a requirements file.\n    Args:\n        requirements_file: Path to the requirements file (default: requirements.txt).\n    Returns:\n        Installation status and output.\n    ",
+      "\n    Runs Python tests in the specified directory.\n    Args:\n        test_directory: Directory containing test files (default: tests).\n    Returns:\n        Test execution results.\n    ",
+      "\n    Gets the current git status with detailed information about changes.\n    Returns:\n        Detailed git status information.\n    ",
+      "\n    Commits changes with an AI-generated commit message based on the changes.\n    Args:\n        files: Files to commit (default: \".\" for all changes).\n    Returns:\n        Commit result with the generated message.\n    ",
+      "Generate a meaningful commit message based on the changes.",
+      "\n    Attempts to automatically resolve git merge conflicts.\n    Returns:\n        Status of conflict resolution.\n    ",
+      "\n    Performs intelligent git branch operations with safety checks.\n    Args:\n        operation: Branch operation ('create', 'switch', 'merge', 'delete').\n        branch_name: Name of the branch (required for most operations).\n    Returns:\n        Result of the branch operation.\n    ",
+      "\n    Continuously monitors code quality and provides real-time feedback.\n    Returns:\n        Current code quality status and recommendations.\n    ",
+      "\n    Automatically fixes common code quality issues.\n    Returns:\n        Report of fixes applied.\n    ",
+      "\n    Generates property-based tests using hypothesis for a Python file.\n    Args:\n        source_file: The source Python file to generate tests for.\n    Returns:\n        Generated property-based test file.\n    ",
+      "\n    Runs a basic security scan on Python files for common vulnerabilities.\n    Returns:\n        Security scan results and recommendations.\n    ",
+      "\n    Performs basic performance profiling on Python code.\n    Args:\n        file_path: Specific file to profile (default: None for project-wide).\n    Returns:\n        Performance analysis and recommendations.\n    ",
+      "\n    Answers questions about the codebase using the knowledge graph.\n    This provides the \"agentic search\" capability that makes Claude Code powerful.\n    \n    Args:\n        question: The question to ask about the codebase.\n    Returns:\n        The answer to the question based on deep codebase understanding.\n    ",
+      "\n    Performs a deep analysis of the entire codebase to build comprehensive understanding.\n    This is the core feature that provides \"agentic search\" capabilities.\n    \n    Args:\n        force_reanalysis: If True, reanalyze all files even if unchanged\n        \n    Returns:\n        Summary of the deep analysis results\n    ",
+      "\n    Analyzes code quality across the project or specific files.\n    \n    Args:\n        file_path: Specific file to analyze, or None for project-wide analysis\n        \n    Returns:\n        Code quality report\n    "
+    ],
+    "complexity": 209,
+    "dependencies": [],
+    "dependents": []
+  },
+  "/home/zohra-bouchamaoui/Desktop/gcode/gcode/file_watcher.py": {
+    "path": "gcode/file_watcher.py",
+    "absolute_path": "/home/zohra-bouchamaoui/Desktop/gcode/gcode/file_watcher.py",
+    "file_type": "python",
+    "size": 7942,
+    "lines": 222,
+    "last_modified": "2025-08-14T21:14:58.461594",
+    "analysis_timestamp": null,
+    "imports": [
+      {
+        "module": "os",
+        "alias": "os"
+      },
+      {
+        "module": "time",
+        "alias": "time"
+      },
+      {
+        "module": "threading",
+        "alias": "threading"
+      },
+      {
+        "module": "hashlib",
+        "alias": "hashlib"
+      },
+      {
+        "module": "logging",
+        "alias": "logging"
+      }
+    ],
+    "from_imports": [
+      {
+        "module": "pathlib",
+        "names": [
+          "Path"
+        ],
+        "level": 0
+      },
+      {
+        "module": "typing",
+        "names": [
+          "Dict",
+          "Set",
+          "Callable",
+          "Optional"
+        ],
+        "level": 0
+      },
+      {
+        "module": "watchdog.observers",
+        "names": [
+          "Observer"
+        ],
+        "level": 0
+      },
+      {
+        "module": "watchdog.events",
+        "names": [
+          "FileSystemEventHandler",
+          "FileModifiedEvent",
+          "FileCreatedEvent",
+          "FileDeletedEvent"
+        ],
+        "level": 0
+      }
+    ],
+    "functions": [
+      {
+        "name": "create_file_watcher",
+        "args": [
+          "project_path",
+          "callback"
+        ],
+        "defaults": 1,
+        "docstring": "Factory function to create a file watcher.",
+        "decorators": [],
+        "complexity": 1
+      },
+      {
+        "name": "__init__",
+        "args": [
+          "self",
+          "callback",
+          "ignored_patterns"
+        ],
+        "defaults": 1,
+        "docstring": null,
+        "decorators": [],
+        "complexity": 2
+      },
+      {
+        "name": "should_ignore",
+        "args": [
+          "self",
+          "file_path"
+        ],
+        "defaults": 0,
+        "docstring": "Check if file should be ignored based on patterns.",
+        "decorators": [],
+        "complexity": 6
+      },
+      {
+        "name": "on_modified",
+        "args": [
+          "self",
+          "event"
+        ],
+        "defaults": 0,
+        "docstring": "Handle file modification events.",
+        "decorators": [],
+        "complexity": 5
+      },
+      {
+        "name": "on_created",
+        "args": [
+          "self",
+          "event"
+        ],
+        "defaults": 0,
+        "docstring": "Handle file creation events.",
+        "decorators": [],
+        "complexity": 3
+      },
+      {
+        "name": "on_deleted",
+        "args": [
+          "self",
+          "event"
+        ],
+        "defaults": 0,
+        "docstring": "Handle file deletion events.",
+        "decorators": [],
+        "complexity": 3
+      },
+      {
+        "name": "__init__",
+        "args": [
+          "self",
+          "project_path",
+          "callback"
+        ],
+        "defaults": 1,
+        "docstring": null,
+        "decorators": [],
+        "complexity": 2
+      },
+      {
+        "name": "_default_callback",
+        "args": [
+          "self",
+          "event_type",
+          "file_path"
+        ],
+        "defaults": 0,
+        "docstring": "Default callback for file changes.",
+        "decorators": [],
+        "complexity": 1
+      },
+      {
+        "name": "_calculate_file_hash",
+        "args": [
+          "self",
+          "file_path"
+        ],
+        "defaults": 0,
+        "docstring": "Calculate MD5 hash of file content.",
+        "decorators": [],
+        "complexity": 2
+      },
+      {
+        "name": "_scan_initial_files",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Perform initial scan of all files to establish baseline.",
+        "decorators": [],
+        "complexity": 4
+      },
+      {
+        "name": "start",
+        "args": [
+          "self",
+          "recursive"
+        ],
+        "defaults": 1,
+        "docstring": "Start watching for file changes.",
+        "decorators": [],
+        "complexity": 3
+      },
+      {
+        "name": "stop",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Stop watching for file changes.",
+        "decorators": [],
+        "complexity": 2
+      },
+      {
+        "name": "get_changed_files",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Get list of files that have changed since last check.",
+        "decorators": [],
+        "complexity": 4
+      },
+      {
+        "name": "add_file",
+        "args": [
+          "self",
+          "file_path"
+        ],
+        "defaults": 0,
+        "docstring": "Add a new file to monitoring.",
+        "decorators": [],
+        "complexity": 2
+      },
+      {
+        "name": "remove_file",
+        "args": [
+          "self",
+          "file_path"
+        ],
+        "defaults": 0,
+        "docstring": "Remove a file from monitoring.",
+        "decorators": [],
+        "complexity": 2
+      },
+      {
+        "name": "get_status",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Get current status of the file watcher.",
+        "decorators": [],
+        "complexity": 1
+      },
+      {
+        "name": "on_file_change",
+        "args": [
+          "event_type",
+          "file_path"
+        ],
+        "defaults": 0,
+        "docstring": null,
+        "decorators": [],
+        "complexity": 1
+      }
+    ],
+    "classes": [
+      {
+        "name": "FileChangeHandler",
+        "bases": [
+          "FileSystemEventHandler"
+        ],
+        "methods": [
+          "__init__",
+          "should_ignore",
+          "on_modified",
+          "on_created",
+          "on_deleted"
+        ],
+        "class_variables": [],
+        "docstring": "Handles file system events and triggers appropriate actions.",
+        "decorators": []
+      },
+      {
+        "name": "FileWatcher",
+        "bases": [],
+        "methods": [
+          "__init__",
+          "_default_callback",
+          "_calculate_file_hash",
+          "_scan_initial_files",
+          "start",
+          "stop",
+          "get_changed_files",
+          "add_file",
+          "remove_file",
+          "get_status"
+        ],
+        "class_variables": [],
+        "docstring": "Main file watcher class that monitors project files.",
+        "decorators": []
+      }
+    ],
+    "variables": [
+      "logger",
+      "watcher",
+      "path",
+      "current_time",
+      "changed_files",
+      "file_path",
+      "current_hash"
+    ],
+    "docstrings": [
+      "\nFile Watcher for gcode - Automatically detects file changes and triggers analysis.\n",
+      "Handles file system events and triggers appropriate actions.",
+      "Main file watcher class that monitors project files.",
+      "Factory function to create a file watcher.",
+      "Check if file should be ignored based on patterns.",
+      "Handle file modification events.",
+      "Handle file creation events.",
+      "Handle file deletion events.",
+      "Default callback for file changes.",
+      "Calculate MD5 hash of file content.",
+      "Perform initial scan of all files to establish baseline.",
+      "Start watching for file changes.",
+      "Stop watching for file changes.",
+      "Get list of files that have changed since last check.",
+      "Add a new file to monitoring.",
+      "Remove a file from monitoring.",
+      "Get current status of the file watcher."
+    ],
+    "complexity": 44,
+    "dependencies": [],
+    "dependents": []
+  },
+  "/home/zohra-bouchamaoui/Desktop/gcode/gcode/agent.py": {
+    "path": "gcode/agent.py",
+    "absolute_path": "/home/zohra-bouchamaoui/Desktop/gcode/gcode/agent.py",
+    "file_type": "python",
+    "size": 99190,
+    "lines": 2324,
+    "last_modified": "2025-08-14T23:08:12.411447",
+    "analysis_timestamp": null,
+    "imports": [
+      {
+        "module": "openai",
+        "alias": "openai"
+      },
+      {
+        "module": "google.generativeai",
+        "alias": "genai"
+      },
+      {
+        "module": "os",
+        "alias": "os"
+      },
+      {
+        "module": "sys",
+        "alias": "sys"
+      },
+      {
+        "module": "json",
+        "alias": "json"
+      },
+      {
+        "module": "time",
+        "alias": "time"
+      },
+      {
+        "module": "threading",
+        "alias": "threading"
+      },
+      {
+        "module": "tty",
+        "alias": "tty"
+      },
+      {
+        "module": "termios",
+        "alias": "termios"
+      },
+      {
+        "module": "select",
+        "alias": "select"
+      },
+      {
+        "module": "pickle",
+        "alias": "pickle"
+      },
+      {
+        "module": "inspect",
+        "alias": "inspect"
+      },
+      {
+        "module": "json",
+        "alias": "json"
+      },
+      {
+        "module": "msvcrt",
+        "alias": "msvcrt"
+      },
+      {
+        "module": "json",
+        "alias": "json"
+      },
+      {
+        "module": "re",
+        "alias": "re"
+      },
+      {
+        "module": "json",
+        "alias": "json"
+      },
+      {
+        "module": "re",
+        "alias": "re"
+      }
+    ],
+    "from_imports": [
+      {
+        "module": "pathlib",
+        "names": [
+          "Path"
+        ],
+        "level": 0
+      },
+      {
+        "module": "datetime",
+        "names": [
+          "datetime"
+        ],
+        "level": 0
+      },
+      {
+        "module": "tools",
+        "names": [
+          "read_file",
+          "write_file",
+          "run_shell_command",
+          "get_project_structure",
+          "analyze_python_file",
+          "create_test_file",
+          "search_code",
+          "install_dependencies",
+          "run_tests",
+          "git_status",
+          "git_commit_with_ai_message",
+          "git_resolve_conflicts",
+          "git_smart_branch",
+          "monitor_code_quality_continuous",
+          "auto_fix_common_issues",
+          "generate_property_based_tests",
+          "run_security_scan",
+          "performance_profiling",
+          "deep_codebase_analysis",
+          "analyze_code_quality"
+        ],
+        "level": 1
+      },
+      {
+        "module": "dotenv",
+        "names": [
+          "load_dotenv"
+        ],
+        "level": 0
+      },
+      {
+        "module": "file_watcher",
+        "names": [
+          "FileWatcher",
+          "create_file_watcher"
+        ],
+        "level": 1
+      },
+      {
+        "module": "analyzer",
+        "names": [
+          "CodebaseAnalyzer",
+          "create_analyzer"
+        ],
+        "level": 1
+      },
+      {
+        "module": "typing",
+        "names": [
+          "List",
+          "Dict"
+        ],
+        "level": 0
+      },
+      {
+        "module": "tools",
+        "names": [
+          "deep_codebase_analysis"
+        ],
+        "level": 1
+      },
+      {
+        "module": "tools",
+        "names": [
+          "analyze_code_quality"
+        ],
+        "level": 1
+      }
+    ],
+    "functions": [
+      {
+        "name": "colored",
+        "args": [
+          "text",
+          "color",
+          "bold"
+        ],
+        "defaults": 1,
+        "docstring": "Apply professional color to text.",
+        "decorators": [],
+        "complexity": 3
+      },
+      {
+        "name": "create_openai_tools",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Convert our tools to OpenAI function calling format for v0.28.1.",
+        "decorators": [],
+        "complexity": 10
+      },
+      {
+        "name": "main",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Main entry point for the CLI - works like Claude Code.",
+        "decorators": [],
+        "complexity": 4
+      },
+      {
+        "name": "show_help",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Show comprehensive help and advanced options.",
+        "decorators": [],
+        "complexity": 1
+      },
+      {
+        "name": "__init__",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": null,
+        "decorators": [],
+        "complexity": 1
+      },
+      {
+        "name": "show_welcome",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Show welcome message and API selection menu.",
+        "decorators": [],
+        "complexity": 1
+      },
+      {
+        "name": "select_api",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Let user select between Gemini and OpenAI.",
+        "decorators": [],
+        "complexity": 6
+      },
+      {
+        "name": "get_api_key",
+        "args": [
+          "self",
+          "api_type"
+        ],
+        "defaults": 0,
+        "docstring": "Get API key from user or environment.",
+        "decorators": [],
+        "complexity": 8
+      },
+      {
+        "name": "test_api",
+        "args": [
+          "self",
+          "api_type",
+          "api_key"
+        ],
+        "defaults": 0,
+        "docstring": "Test the API key to ensure it works.",
+        "decorators": [],
+        "complexity": 6
+      },
+      {
+        "name": "save_config",
+        "args": [
+          "self",
+          "api_type",
+          "api_key"
+        ],
+        "defaults": 0,
+        "docstring": "Save the selected API configuration.",
+        "decorators": [],
+        "complexity": 2
+      },
+      {
+        "name": "load_config",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Load saved configuration if available.",
+        "decorators": [],
+        "complexity": 4
+      },
+      {
+        "name": "auto_detect",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Automatically detect which API keys are available and working.",
+        "decorators": [],
+        "complexity": 5
+      },
+      {
+        "name": "authenticate",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Main authentication flow.",
+        "decorators": [],
+        "complexity": 5
+      },
+      {
+        "name": "__init__",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": null,
+        "decorators": [],
+        "complexity": 1
+      },
+      {
+        "name": "__enter__",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Enter interactive mode.",
+        "decorators": [],
+        "complexity": 2
+      },
+      {
+        "name": "__exit__",
+        "args": [
+          "self",
+          "exc_type",
+          "exc_val",
+          "exc_tb"
+        ],
+        "defaults": 0,
+        "docstring": "Exit interactive mode.",
+        "decorators": [],
+        "complexity": 2
+      },
+      {
+        "name": "get_key",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Get a single key press.",
+        "decorators": [],
+        "complexity": 3
+      },
+      {
+        "name": "__init__",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": null,
+        "decorators": [],
+        "complexity": 1
+      },
+      {
+        "name": "section",
+        "args": [
+          "self",
+          "title",
+          "content",
+          "collapsible",
+          "expanded"
+        ],
+        "defaults": 3,
+        "docstring": "Create a collapsible section with professional styling.",
+        "decorators": [],
+        "complexity": 4
+      },
+      {
+        "name": "render_section",
+        "args": [
+          "self",
+          "section_id",
+          "force_expand"
+        ],
+        "defaults": 1,
+        "docstring": "Render a section with current state.",
+        "decorators": [],
+        "complexity": 6
+      },
+      {
+        "name": "toggle_section",
+        "args": [
+          "self",
+          "section_id"
+        ],
+        "defaults": 0,
+        "docstring": "Toggle a section's expanded state.",
+        "decorators": [],
+        "complexity": 4
+      },
+      {
+        "name": "interactive_render",
+        "args": [
+          "self",
+          "prompt"
+        ],
+        "defaults": 1,
+        "docstring": "Render all sections interactively with user control.",
+        "decorators": [],
+        "complexity": 18
+      },
+      {
+        "name": "subsection",
+        "args": [
+          "self",
+          "title"
+        ],
+        "defaults": 0,
+        "docstring": "Create a subsection with subtle styling.",
+        "decorators": [],
+        "complexity": 1
+      },
+      {
+        "name": "info",
+        "args": [
+          "self",
+          "text"
+        ],
+        "defaults": 0,
+        "docstring": "Display informational text.",
+        "decorators": [],
+        "complexity": 1
+      },
+      {
+        "name": "success",
+        "args": [
+          "self",
+          "text"
+        ],
+        "defaults": 0,
+        "docstring": "Display success message.",
+        "decorators": [],
+        "complexity": 1
+      },
+      {
+        "name": "warning",
+        "args": [
+          "self",
+          "text"
+        ],
+        "defaults": 0,
+        "docstring": "Display warning message.",
+        "decorators": [],
+        "complexity": 1
+      },
+      {
+        "name": "error",
+        "args": [
+          "self",
+          "text"
+        ],
+        "defaults": 0,
+        "docstring": "Display error message.",
+        "decorators": [],
+        "complexity": 1
+      },
+      {
+        "name": "progress_bar",
+        "args": [
+          "self",
+          "current",
+          "total",
+          "width"
+        ],
+        "defaults": 1,
+        "docstring": "Display a professional progress bar.",
+        "decorators": [],
+        "complexity": 2
+      },
+      {
+        "name": "spinner",
+        "args": [
+          "self",
+          "text"
+        ],
+        "defaults": 1,
+        "docstring": "Display a spinning progress indicator.",
+        "decorators": [],
+        "complexity": 1
+      },
+      {
+        "name": "file_preview",
+        "args": [
+          "self",
+          "file_path",
+          "max_lines"
+        ],
+        "defaults": 1,
+        "docstring": "Display a file preview with syntax highlighting.",
+        "decorators": [],
+        "complexity": 4
+      },
+      {
+        "name": "__init__",
+        "args": [
+          "self",
+          "project_root"
+        ],
+        "defaults": 1,
+        "docstring": null,
+        "decorators": [],
+        "complexity": 1
+      },
+      {
+        "name": "load_context",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Load existing context from file.",
+        "decorators": [],
+        "complexity": 5
+      },
+      {
+        "name": "save_context",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Save context to file.",
+        "decorators": [],
+        "complexity": 2
+      },
+      {
+        "name": "add_interaction",
+        "args": [
+          "self",
+          "user_input",
+          "response",
+          "tools_used"
+        ],
+        "defaults": 0,
+        "docstring": "Add a new interaction to the conversation history.",
+        "decorators": [],
+        "complexity": 2
+      },
+      {
+        "name": "get_relevant_context",
+        "args": [
+          "self",
+          "query"
+        ],
+        "defaults": 0,
+        "docstring": "Get relevant context for a query using the knowledge graph.",
+        "decorators": [],
+        "complexity": 18
+      },
+      {
+        "name": "__init__",
+        "args": [
+          "self",
+          "model_name"
+        ],
+        "defaults": 1,
+        "docstring": "Initializes the agent with API authentication and advanced context management.",
+        "decorators": [],
+        "complexity": 7
+      },
+      {
+        "name": "_configure_api",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Configure the selected API with the provided key.",
+        "decorators": [],
+        "complexity": 3
+      },
+      {
+        "name": "_call_api",
+        "args": [
+          "self",
+          "prompt"
+        ],
+        "defaults": 0,
+        "docstring": "Call the configured API (Gemini or OpenAI) with the prompt and tools.",
+        "decorators": [],
+        "complexity": 3
+      },
+      {
+        "name": "_call_gemini",
+        "args": [
+          "self",
+          "prompt"
+        ],
+        "defaults": 0,
+        "docstring": "Call Gemini API with the prompt and tools.",
+        "decorators": [],
+        "complexity": 2
+      },
+      {
+        "name": "_call_openai",
+        "args": [
+          "self",
+          "prompt"
+        ],
+        "defaults": 0,
+        "docstring": "Call OpenAI API with the prompt and tools.",
+        "decorators": [],
+        "complexity": 5
+      },
+      {
+        "name": "_enhance_prompt_with_context",
+        "args": [
+          "self",
+          "prompt",
+          "relevant_context"
+        ],
+        "defaults": 0,
+        "docstring": "Enhance the user prompt with deep codebase context.",
+        "decorators": [],
+        "complexity": 12
+      },
+      {
+        "name": "query_codebase",
+        "args": [
+          "self",
+          "question"
+        ],
+        "defaults": 0,
+        "docstring": "Query the knowledge graph with natural language questions.",
+        "decorators": [],
+        "complexity": 3
+      },
+      {
+        "name": "_provide_proactive_suggestions",
+        "args": [
+          "self",
+          "original_request",
+          "tools_used"
+        ],
+        "defaults": 0,
+        "docstring": "Provide proactive suggestions based on the completed work.",
+        "decorators": [],
+        "complexity": 3
+      },
+      {
+        "name": "_check_for_more_work",
+        "args": [
+          "self",
+          "original_prompt",
+          "executed_plan"
+        ],
+        "defaults": 0,
+        "docstring": "Check if we need to continue with more tools to complete the task.",
+        "decorators": [],
+        "complexity": 6
+      },
+      {
+        "name": "_execute_tool",
+        "args": [
+          "self",
+          "tool_call",
+          "current",
+          "total"
+        ],
+        "defaults": 0,
+        "docstring": "Execute a single tool call with professional feedback.",
+        "decorators": [],
+        "complexity": 5
+      },
+      {
+        "name": "_show_help",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Show available commands and help.",
+        "decorators": [],
+        "complexity": 1
+      },
+      {
+        "name": "_show_project_context",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Show current project context and insights.",
+        "decorators": [],
+        "complexity": 6
+      },
+      {
+        "name": "_analyze_project_context",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Analyze the project context with DEEP codebase understanding.",
+        "decorators": [],
+        "complexity": 3
+      },
+      {
+        "name": "converse",
+        "args": [
+          "self",
+          "prompt",
+          "interactive"
+        ],
+        "defaults": 1,
+        "docstring": "Handles the conversation flow with advanced context awareness - like Claude Code.",
+        "decorators": [],
+        "complexity": 11
+      },
+      {
+        "name": "start_file_watching",
+        "args": [
+          "self",
+          "project_path"
+        ],
+        "defaults": 1,
+        "docstring": "Start watching for file changes and automatically analyze them.",
+        "decorators": [],
+        "complexity": 5
+      },
+      {
+        "name": "stop_file_watching",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Stop watching for file changes.",
+        "decorators": [],
+        "complexity": 3
+      },
+      {
+        "name": "_on_file_change",
+        "args": [
+          "self",
+          "event_type",
+          "file_path"
+        ],
+        "defaults": 0,
+        "docstring": "Callback for file changes - automatically analyze modified files.",
+        "decorators": [],
+        "complexity": 6
+      },
+      {
+        "name": "_auto_analyze_file",
+        "args": [
+          "self",
+          "file_path"
+        ],
+        "defaults": 0,
+        "docstring": "Automatically analyze a file when it changes.",
+        "decorators": [],
+        "complexity": 15
+      },
+      {
+        "name": "_auto_start_file_watching",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Automatically start file watching for proactive monitoring.",
+        "decorators": [],
+        "complexity": 3
+      },
+      {
+        "name": "_should_auto_watch",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Determine if we should automatically start file watching.",
+        "decorators": [],
+        "complexity": 2
+      },
+      {
+        "name": "toggle_auto_watch",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Toggle automatic file watching on/off.",
+        "decorators": [],
+        "complexity": 5
+      },
+      {
+        "name": "get_watch_status",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Get current file watching status.",
+        "decorators": [],
+        "complexity": 3
+      },
+      {
+        "name": "toggle_auto_analysis",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Toggle automatic analysis on/off.",
+        "decorators": [],
+        "complexity": 1
+      },
+      {
+        "name": "watch_commands",
+        "args": [
+          "self",
+          "command"
+        ],
+        "defaults": 0,
+        "docstring": "Handle file watching commands.",
+        "decorators": [],
+        "complexity": 9
+      },
+      {
+        "name": "_enter_interactive_mode",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Enter the interactive collapsible section mode.",
+        "decorators": [],
+        "complexity": 1
+      },
+      {
+        "name": "_toggle_sections",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Toggle the expanded state of all collapsible sections.",
+        "decorators": [],
+        "complexity": 3
+      },
+      {
+        "name": "_demo_collapsible_sections",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Demonstrate collapsible sections by creating a few.",
+        "decorators": [],
+        "complexity": 1
+      },
+      {
+        "name": "_process_request",
+        "args": [
+          "self",
+          "request"
+        ],
+        "defaults": 0,
+        "docstring": "Process a user request with autonomous end-to-end workflow execution.",
+        "decorators": [],
+        "complexity": 13
+      },
+      {
+        "name": "_is_complex_workflow",
+        "args": [
+          "self",
+          "request"
+        ],
+        "defaults": 0,
+        "docstring": "Determine if a request requires complex workflow execution.",
+        "decorators": [],
+        "complexity": 1
+      },
+      {
+        "name": "_handle_complex_workflow",
+        "args": [
+          "self",
+          "request"
+        ],
+        "defaults": 0,
+        "docstring": "Handle complex workflows using autonomous planning and execution.",
+        "decorators": [],
+        "complexity": 4
+      },
+      {
+        "name": "_handle_simple_request",
+        "args": [
+          "self",
+          "request"
+        ],
+        "defaults": 0,
+        "docstring": "Handle simple requests using the traditional approach.",
+        "decorators": [],
+        "complexity": 6
+      },
+      {
+        "name": "_show_deep_help",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Show comprehensive help for deep codebase understanding features.",
+        "decorators": [],
+        "complexity": 1
+      },
+      {
+        "name": "generate_project_memory",
+        "args": [
+          "self",
+          "force_update"
+        ],
+        "defaults": 1,
+        "docstring": "Generate a GCODE.md file with project memory and knowledge graph summary.\nThis mimics Claude Code's CLAUDE.md functionality for persistent project context.",
+        "decorators": [],
+        "complexity": 25
+      },
+      {
+        "name": "_determine_file_purpose",
+        "args": [
+          "self",
+          "file_path",
+          "file_info"
+        ],
+        "defaults": 0,
+        "docstring": "Determine the purpose of a file based on its content and structure.",
+        "decorators": [],
+        "complexity": 16
+      },
+      {
+        "name": "_calculate_file_importance",
+        "args": [
+          "self",
+          "file_path",
+          "purpose"
+        ],
+        "defaults": 0,
+        "docstring": "Calculate the importance score of a file.",
+        "decorators": [],
+        "complexity": 7
+      },
+      {
+        "name": "_create_plan",
+        "args": [
+          "self",
+          "goal"
+        ],
+        "defaults": 0,
+        "docstring": "Calls the LLM to create a step-by-step plan to achieve a goal.\nThis is the core of the autonomous workflow system.",
+        "decorators": [],
+        "complexity": 7
+      },
+      {
+        "name": "_extract_plan_from_text",
+        "args": [
+          "self",
+          "text",
+          "goal"
+        ],
+        "defaults": 0,
+        "docstring": "Fallback method to extract a plan from unstructured text.",
+        "decorators": [],
+        "complexity": 11
+      },
+      {
+        "name": "_execute_plan",
+        "args": [
+          "self",
+          "plan",
+          "original_goal"
+        ],
+        "defaults": 0,
+        "docstring": "Executes a plan step-by-step, with self-correction capabilities.\nThis is the core execution engine for autonomous workflows.",
+        "decorators": [],
+        "complexity": 10
+      },
+      {
+        "name": "_self_correct",
+        "args": [
+          "self",
+          "original_goal",
+          "history"
+        ],
+        "defaults": 0,
+        "docstring": "Analyzes a failed execution and creates a new plan to recover.\nThis enables the autonomous loop for error handling.",
+        "decorators": [],
+        "complexity": 5
+      }
+    ],
+    "classes": [
+      {
+        "name": "Colors",
+        "bases": [],
+        "methods": [],
+        "class_variables": [
+          "PRIMARY",
+          "SECONDARY",
+          "SUCCESS",
+          "WARNING",
+          "ERROR",
+          "INFO",
+          "HIGHLIGHT",
+          "RESET",
+          "BOLD",
+          "DIM"
+        ],
+        "docstring": null,
+        "decorators": []
+      },
+      {
+        "name": "APIAuthenticator",
+        "bases": [],
+        "methods": [
+          "__init__",
+          "show_welcome",
+          "select_api",
+          "get_api_key",
+          "test_api",
+          "save_config",
+          "load_config",
+          "auto_detect",
+          "authenticate"
+        ],
+        "class_variables": [],
+        "docstring": "Handles API authentication and selection between Gemini and OpenAI.",
+        "decorators": []
+      },
+      {
+        "name": "InteractiveTerminal",
+        "bases": [],
+        "methods": [
+          "__init__",
+          "__enter__",
+          "__exit__",
+          "get_key"
+        ],
+        "class_variables": [],
+        "docstring": "Handles interactive terminal input for collapsible sections.",
+        "decorators": []
+      },
+      {
+        "name": "ProfessionalUI",
+        "bases": [],
+        "methods": [
+          "__init__",
+          "section",
+          "render_section",
+          "toggle_section",
+          "interactive_render",
+          "subsection",
+          "info",
+          "success",
+          "warning",
+          "error",
+          "progress_bar",
+          "spinner",
+          "file_preview"
+        ],
+        "class_variables": [],
+        "docstring": "Professional UI system with REAL collapsible sections and interactive formatting.",
+        "decorators": []
+      },
+      {
+        "name": "ProjectContext",
+        "bases": [],
+        "methods": [
+          "__init__",
+          "load_context",
+          "save_context",
+          "add_interaction",
+          "get_relevant_context"
+        ],
+        "class_variables": [],
+        "docstring": "Manages project context and memory across sessions.",
+        "decorators": []
+      },
+      {
+        "name": "GeminiAgent",
+        "bases": [],
+        "methods": [
+          "__init__",
+          "_configure_api",
+          "_call_api",
+          "_call_gemini",
+          "_call_openai",
+          "_enhance_prompt_with_context",
+          "query_codebase",
+          "_provide_proactive_suggestions",
+          "_check_for_more_work",
+          "_execute_tool",
+          "_show_help",
+          "_show_project_context",
+          "_analyze_project_context",
+          "converse",
+          "start_file_watching",
+          "stop_file_watching",
+          "_on_file_change",
+          "_auto_analyze_file",
+          "_auto_start_file_watching",
+          "_should_auto_watch",
+          "toggle_auto_watch",
+          "get_watch_status",
+          "toggle_auto_analysis",
+          "watch_commands",
+          "_enter_interactive_mode",
+          "_toggle_sections",
+          "_demo_collapsible_sections",
+          "_process_request",
+          "_is_complex_workflow",
+          "_handle_complex_workflow",
+          "_handle_simple_request",
+          "_show_deep_help",
+          "generate_project_memory",
+          "_determine_file_purpose",
+          "_calculate_file_importance",
+          "_create_plan",
+          "_extract_plan_from_text",
+          "_execute_plan",
+          "_self_correct"
+        ],
+        "class_variables": [],
+        "docstring": "A conversational agent powered by either Gemini or OpenAI with advanced capabilities.",
+        "decorators": []
+      }
+    ],
+    "variables": [
+      "tools",
+      "AVAILABLE_TOOLS",
+      "PRIMARY",
+      "SECONDARY",
+      "SUCCESS",
+      "WARNING",
+      "ERROR",
+      "INFO",
+      "HIGHLIGHT",
+      "RESET",
+      "BOLD",
+      "DIM",
+      "openai_functions",
+      "tool_descriptions",
+      "style",
+      "config",
+      "gemini_key",
+      "openai_key",
+      "choice",
+      "api_key",
+      "section_id",
+      "section",
+      "title",
+      "content",
+      "collapsible",
+      "filled",
+      "bar",
+      "percentage",
+      "spinner_chars",
+      "tool_func",
+      "sig",
+      "func_def",
+      "data",
+      "interaction",
+      "relevant",
+      "query_lower",
+      "context_info",
+      "func_name",
+      "func_to_call",
+      "help_text",
+      "insights",
+      "context_content",
+      "current_dir",
+      "project_indicators",
+      "has_project_files",
+      "has_source_files",
+      "status",
+      "status",
+      "status",
+      "workflow_keywords",
+      "request_lower",
+      "plan",
+      "success",
+      "processing_content",
+      "relevant_context",
+      "enhanced_prompt",
+      "response",
+      "plan_text",
+      "tool_calls",
+      "tools_used",
+      "gcode_md_path",
+      "path_lower",
+      "score",
+      "execution_history",
+      "correction_prompt",
+      "agent",
+      "agent",
+      "prompt",
+      "agent",
+      "env_key",
+      "status",
+      "header",
+      "preview",
+      "param_type",
+      "relevance_score",
+      "model",
+      "chat",
+      "response",
+      "response_parts",
+      "plan_text",
+      "tool_calls",
+      "messages",
+      "response",
+      "assistant_message",
+      "arch",
+      "patterns",
+      "recent",
+      "analyzer",
+      "suggestions_prompt",
+      "response",
+      "suggestions",
+      "func_args",
+      "result",
+      "analysis_content",
+      "analyzer",
+      "knowledge_graph",
+      "structure",
+      "python_files",
+      "insights",
+      "arch",
+      "patterns",
+      "success_msg",
+      "analysis_summary",
+      "project_path",
+      "rel_path",
+      "command",
+      "question",
+      "context_info",
+      "execution_content",
+      "last_modified",
+      "knowledge_graph",
+      "arch",
+      "patterns",
+      "content",
+      "key_files",
+      "dependency_map",
+      "complex_files",
+      "response",
+      "content",
+      "json_match",
+      "lines",
+      "plan",
+      "current_step",
+      "tool_calls",
+      "step_successful",
+      "step_results",
+      "response",
+      "content",
+      "json_match",
+      "choice",
+      "env_key",
+      "api_key",
+      "model",
+      "response",
+      "choice",
+      "header",
+      "header",
+      "lines",
+      "model_name",
+      "model_name",
+      "overview",
+      "frameworks",
+      "follow_up_prompt",
+      "response",
+      "tool_calls",
+      "func_args",
+      "result",
+      "file_path",
+      "tool_result",
+      "plan_json",
+      "plan",
+      "line",
+      "new_plan",
+      "response",
+      "config",
+      "user_input",
+      "param_type",
+      "data",
+      "data",
+      "file_info",
+      "structure",
+      "python_files",
+      "insights",
+      "success_msg",
+      "user_input",
+      "lines",
+      "issues",
+      "status",
+      "purpose",
+      "plan_json",
+      "plan",
+      "thought",
+      "thought",
+      "current_step",
+      "tool_result",
+      "new_plan_json",
+      "new_plan",
+      "param_type",
+      "step_successful",
+      "param_type",
+      "funcs",
+      "classes",
+      "step_successful",
+      "param_type",
+      "section_num",
+      "section_ids",
+      "section_id",
+      "functions",
+      "classes"
+    ],
+    "docstrings": [
+      "Apply professional color to text.",
+      "Handles API authentication and selection between Gemini and OpenAI.",
+      "Handles interactive terminal input for collapsible sections.",
+      "Professional UI system with REAL collapsible sections and interactive formatting.",
+      "Convert our tools to OpenAI function calling format for v0.28.1.",
+      "Manages project context and memory across sessions.",
+      "A conversational agent powered by either Gemini or OpenAI with advanced capabilities.",
+      "Main entry point for the CLI - works like Claude Code.",
+      "Show comprehensive help and advanced options.",
+      "Show welcome message and API selection menu.",
+      "Let user select between Gemini and OpenAI.",
+      "Get API key from user or environment.",
+      "Test the API key to ensure it works.",
+      "Save the selected API configuration.",
+      "Load saved configuration if available.",
+      "Automatically detect which API keys are available and working.",
+      "Main authentication flow.",
+      "Enter interactive mode.",
+      "Exit interactive mode.",
+      "Get a single key press.",
+      "Create a collapsible section with professional styling.",
+      "Render a section with current state.",
+      "Toggle a section's expanded state.",
+      "Render all sections interactively with user control.",
+      "Create a subsection with subtle styling.",
+      "Display informational text.",
+      "Display success message.",
+      "Display warning message.",
+      "Display error message.",
+      "Display a professional progress bar.",
+      "Display a spinning progress indicator.",
+      "Display a file preview with syntax highlighting.",
+      "Load existing context from file.",
+      "Save context to file.",
+      "Add a new interaction to the conversation history.",
+      "Get relevant context for a query using the knowledge graph.",
+      "Initializes the agent with API authentication and advanced context management.",
+      "Configure the selected API with the provided key.",
+      "Call the configured API (Gemini or OpenAI) with the prompt and tools.",
+      "Call Gemini API with the prompt and tools.",
+      "Call OpenAI API with the prompt and tools.",
+      "Enhance the user prompt with deep codebase context.",
+      "Query the knowledge graph with natural language questions.",
+      "Provide proactive suggestions based on the completed work.",
+      "Check if we need to continue with more tools to complete the task.",
+      "Execute a single tool call with professional feedback.",
+      "Show available commands and help.",
+      "Show current project context and insights.",
+      "Analyze the project context with DEEP codebase understanding.",
+      "Handles the conversation flow with advanced context awareness - like Claude Code.",
+      "Start watching for file changes and automatically analyze them.",
+      "Stop watching for file changes.",
+      "Callback for file changes - automatically analyze modified files.",
+      "Automatically analyze a file when it changes.",
+      "Automatically start file watching for proactive monitoring.",
+      "Determine if we should automatically start file watching.",
+      "Toggle automatic file watching on/off.",
+      "Get current file watching status.",
+      "Toggle automatic analysis on/off.",
+      "Handle file watching commands.",
+      "Enter the interactive collapsible section mode.",
+      "Toggle the expanded state of all collapsible sections.",
+      "Demonstrate collapsible sections by creating a few.",
+      "Process a user request with autonomous end-to-end workflow execution.",
+      "Determine if a request requires complex workflow execution.",
+      "Handle complex workflows using autonomous planning and execution.",
+      "Handle simple requests using the traditional approach.",
+      "Show comprehensive help for deep codebase understanding features.",
+      "Generate a GCODE.md file with project memory and knowledge graph summary.\n        This mimics Claude Code's CLAUDE.md functionality for persistent project context.",
+      "Determine the purpose of a file based on its content and structure.",
+      "Calculate the importance score of a file.",
+      "\n        Calls the LLM to create a step-by-step plan to achieve a goal.\n        This is the core of the autonomous workflow system.\n        ",
+      "Fallback method to extract a plan from unstructured text.",
+      "\n        Executes a plan step-by-step, with self-correction capabilities.\n        This is the core execution engine for autonomous workflows.\n        ",
+      "\n        Analyzes a failed execution and creates a new plan to recover.\n        This enables the autonomous loop for error handling.\n        "
+    ],
+    "complexity": 370,
+    "dependencies": [],
+    "dependents": []
+  },
+  "/home/zohra-bouchamaoui/Desktop/gcode/gcode/test_docker.py": {
+    "path": "gcode/test_docker.py",
+    "absolute_path": "/home/zohra-bouchamaoui/Desktop/gcode/gcode/test_docker.py",
+    "file_type": "python",
+    "size": 5190,
+    "lines": 156,
+    "last_modified": "2025-08-14T20:27:46.195566",
+    "analysis_timestamp": null,
+    "imports": [
+      {
+        "module": "os",
+        "alias": "os"
+      },
+      {
+        "module": "subprocess",
+        "alias": "subprocess"
+      },
+      {
+        "module": "sys",
+        "alias": "sys"
+      }
+    ],
+    "from_imports": [],
+    "functions": [
+      {
+        "name": "test_docker_installation",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Test if Docker is installed and running.",
+        "decorators": [],
+        "complexity": 5
+      },
+      {
+        "name": "test_docker_compose",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Test if Docker Compose is available.",
+        "decorators": [],
+        "complexity": 2
+      },
+      {
+        "name": "test_gcode_docker_build",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Test building the gcode Docker image.",
+        "decorators": [],
+        "complexity": 4
+      },
+      {
+        "name": "show_docker_usage",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Show how to use gcode with Docker.",
+        "decorators": [],
+        "complexity": 1
+      },
+      {
+        "name": "main",
+        "args": [],
+        "defaults": 0,
+        "docstring": "Run all Docker tests.",
+        "decorators": [],
+        "complexity": 4
+      }
+    ],
+    "classes": [],
+    "variables": [
+      "script_dir",
+      "parent_dir",
+      "dockerfile_path",
+      "compose_path",
+      "original_dir",
+      "tests",
+      "passed",
+      "total",
+      "result",
+      "result",
+      "result",
+      "result"
+    ],
+    "docstrings": [
+      "\nTest script to verify Docker functionality for gcode.\n",
+      "Test if Docker is installed and running.",
+      "Test if Docker Compose is available.",
+      "Test building the gcode Docker image.",
+      "Show how to use gcode with Docker.",
+      "Run all Docker tests."
+    ],
+    "complexity": 16,
+    "dependencies": [],
+    "dependents": []
+  },
+  "/home/zohra-bouchamaoui/Desktop/gcode/gcode/analyzer.py": {
+    "path": "gcode/analyzer.py",
+    "absolute_path": "/home/zohra-bouchamaoui/Desktop/gcode/gcode/analyzer.py",
+    "file_type": "python",
+    "size": 25831,
+    "lines": 644,
+    "last_modified": "2025-08-14T22:50:54.423813",
+    "analysis_timestamp": null,
+    "imports": [
+      {
+        "module": "os",
+        "alias": "os"
+      },
+      {
+        "module": "ast",
+        "alias": "ast"
+      },
+      {
+        "module": "re",
+        "alias": "re"
+      },
+      {
+        "module": "json",
+        "alias": "json"
+      }
+    ],
+    "from_imports": [
+      {
+        "module": "pathlib",
+        "names": [
+          "Path"
+        ],
+        "level": 0
+      },
+      {
+        "module": "typing",
+        "names": [
+          "Dict",
+          "List",
+          "Set",
+          "Optional",
+          "Any"
+        ],
+        "level": 0
+      },
+      {
+        "module": "datetime",
+        "names": [
+          "datetime"
+        ],
+        "level": 0
+      }
+    ],
+    "functions": [
+      {
+        "name": "create_analyzer",
+        "args": [
+          "project_root"
+        ],
+        "defaults": 1,
+        "docstring": "Factory function to create a codebase analyzer.",
+        "decorators": [],
+        "complexity": 1
+      },
+      {
+        "name": "__init__",
+        "args": [
+          "self",
+          "project_root"
+        ],
+        "defaults": 1,
+        "docstring": null,
+        "decorators": [],
+        "complexity": 1
+      },
+      {
+        "name": "should_ignore",
+        "args": [
+          "self",
+          "file_path"
+        ],
+        "defaults": 0,
+        "docstring": "Check if file should be ignored during analysis.",
+        "decorators": [],
+        "complexity": 4
+      },
+      {
+        "name": "analyze",
+        "args": [
+          "self",
+          "force_reanalysis"
+        ],
+        "defaults": 1,
+        "docstring": "Analyzes the entire codebase and builds a comprehensive knowledge graph.\n\nArgs:\n    force_reanalysis: If True, reanalyze all files even if unchanged\n    \nReturns:\n    The complete knowledge graph",
+        "decorators": [],
+        "complexity": 8
+      },
+      {
+        "name": "analyze_file",
+        "args": [
+          "self",
+          "file_path",
+          "file_type"
+        ],
+        "defaults": 0,
+        "docstring": "Analyzes a single file and adds it to the knowledge graph.",
+        "decorators": [],
+        "complexity": 7
+      },
+      {
+        "name": "_analyze_python_file",
+        "args": [
+          "self",
+          "content"
+        ],
+        "defaults": 0,
+        "docstring": "Deep analysis of Python files using AST.",
+        "decorators": [],
+        "complexity": 20
+      },
+      {
+        "name": "_analyze_js_file",
+        "args": [
+          "self",
+          "content"
+        ],
+        "defaults": 0,
+        "docstring": "Basic analysis of JavaScript/TypeScript files.",
+        "decorators": [],
+        "complexity": 1
+      },
+      {
+        "name": "_analyze_compiled_file",
+        "args": [
+          "self",
+          "content",
+          "file_type"
+        ],
+        "defaults": 0,
+        "docstring": "Basic analysis of compiled language files.",
+        "decorators": [],
+        "complexity": 3
+      },
+      {
+        "name": "_analyze_config_file",
+        "args": [
+          "self",
+          "content",
+          "file_path"
+        ],
+        "defaults": 0,
+        "docstring": "Analyze configuration files.",
+        "decorators": [],
+        "complexity": 8
+      },
+      {
+        "name": "_analyze_doc_file",
+        "args": [
+          "self",
+          "content",
+          "file_path"
+        ],
+        "defaults": 0,
+        "docstring": "Analyze documentation files.",
+        "decorators": [],
+        "complexity": 1
+      },
+      {
+        "name": "_map_dependencies",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Maps dependencies between files in the knowledge graph.",
+        "decorators": [],
+        "complexity": 9
+      },
+      {
+        "name": "_is_import_match",
+        "args": [
+          "self",
+          "module_name",
+          "file_path"
+        ],
+        "defaults": 0,
+        "docstring": "Check if an import matches a file path.",
+        "decorators": [],
+        "complexity": 6
+      },
+      {
+        "name": "_build_architecture_overview",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Builds a high-level architecture overview of the project.",
+        "decorators": [],
+        "complexity": 10
+      },
+      {
+        "name": "_analyze_project_patterns",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Analyzes project patterns and provides insights.",
+        "decorators": [],
+        "complexity": 10
+      },
+      {
+        "name": "_calculate_file_hash",
+        "args": [
+          "self",
+          "file_path"
+        ],
+        "defaults": 0,
+        "docstring": "Calculate a simple hash of file content.",
+        "decorators": [],
+        "complexity": 2
+      },
+      {
+        "name": "_can_use_cached_analysis",
+        "args": [
+          "self"
+        ],
+        "defaults": 0,
+        "docstring": "Check if we can use cached analysis.",
+        "decorators": [],
+        "complexity": 7
+      },
+      {
+        "name": "_get_decorator_name",
+        "args": [
+          "self",
+          "node"
+        ],
+        "defaults": 0,
+        "docstring": "Extract decorator name from AST node.",
+        "decorators": [],
+        "complexity": 4
+      },
+      {
+        "name": "_get_base_name",
+        "args": [
+          "self",
+          "node"
+        ],
+        "defaults": 0,
+        "docstring": "Extract base class name from AST node.",
+        "decorators": [],
+        "complexity": 2
+      },
+      {
+        "name": "_calculate_complexity",
+        "args": [
+          "self",
+          "node"
+        ],
+        "defaults": 0,
+        "docstring": "Calculate cyclomatic complexity of a function.",
+        "decorators": [],
+        "complexity": 4
+      },
+      {
+        "name": "save",
+        "args": [
+          "self",
+          "output_file"
+        ],
+        "defaults": 1,
+        "docstring": "Saves the knowledge graph to a file.",
+        "decorators": [],
+        "complexity": 1
+      },
+      {
+        "name": "load",
+        "args": [
+          "self",
+          "input_file"
+        ],
+        "defaults": 1,
+        "docstring": "Loads the knowledge graph from a file.",
+        "decorators": [],
+        "complexity": 4
+      },
+      {
+        "name": "query",
+        "args": [
+          "self",
+          "question"
+        ],
+        "defaults": 0,
+        "docstring": "Query the knowledge graph with natural language questions.\nThis provides the \"agentic search\" capability.",
+        "decorators": [],
+        "complexity": 12
+      }
+    ],
+    "classes": [
+      {
+        "name": "CodebaseAnalyzer",
+        "bases": [],
+        "methods": [
+          "__init__",
+          "should_ignore",
+          "analyze",
+          "analyze_file",
+          "_analyze_python_file",
+          "_analyze_js_file",
+          "_analyze_compiled_file",
+          "_analyze_config_file",
+          "_analyze_doc_file",
+          "_map_dependencies",
+          "_is_import_match",
+          "_build_architecture_overview",
+          "_analyze_project_patterns",
+          "_calculate_file_hash",
+          "_can_use_cached_analysis",
+          "_get_decorator_name",
+          "_get_base_name",
+          "_calculate_complexity",
+          "save",
+          "load",
+          "query"
+        ],
+        "class_variables": [],
+        "docstring": "Analyzes entire codebases to build a comprehensive knowledge graph.",
+        "decorators": []
+      }
+    ],
+    "variables": [
+      "analyzer",
+      "knowledge_graph",
+      "arch",
+      "file_str",
+      "total_files",
+      "analysis",
+      "import_pattern",
+      "export_pattern",
+      "function_pattern",
+      "class_pattern",
+      "analysis",
+      "analysis",
+      "analysis",
+      "heading_pattern",
+      "link_pattern",
+      "code_block_pattern",
+      "file_name",
+      "architecture",
+      "patterns",
+      "cache_file",
+      "complexity",
+      "output_path",
+      "save_data",
+      "input_path",
+      "question",
+      "file_hash",
+      "file_info",
+      "tree",
+      "analysis",
+      "class_pattern",
+      "method_pattern",
+      "parts",
+      "file_parts",
+      "path",
+      "content",
+      "stat",
+      "file_name",
+      "patterns",
+      "files",
+      "content",
+      "function_pattern",
+      "class_pattern",
+      "config",
+      "cached",
+      "actual_path",
+      "current_hash",
+      "file_name",
+      "lines",
+      "module_name",
+      "content",
+      "data",
+      "funcs",
+      "arch",
+      "deps",
+      "overview",
+      "patterns",
+      "func_info",
+      "key",
+      "frameworks",
+      "class_info"
+    ],
+    "docstrings": [
+      "\nDeep Codebase Analyzer for gcode - Builds semantic understanding of entire projects.\nThis provides the \"agentic search\" capabilities that make Claude Code so powerful.\n",
+      "Analyzes entire codebases to build a comprehensive knowledge graph.",
+      "Factory function to create a codebase analyzer.",
+      "Check if file should be ignored during analysis.",
+      "\n        Analyzes the entire codebase and builds a comprehensive knowledge graph.\n        \n        Args:\n            force_reanalysis: If True, reanalyze all files even if unchanged\n            \n        Returns:\n            The complete knowledge graph\n        ",
+      "Analyzes a single file and adds it to the knowledge graph.",
+      "Deep analysis of Python files using AST.",
+      "Basic analysis of JavaScript/TypeScript files.",
+      "Basic analysis of compiled language files.",
+      "Analyze configuration files.",
+      "Analyze documentation files.",
+      "Maps dependencies between files in the knowledge graph.",
+      "Check if an import matches a file path.",
+      "Builds a high-level architecture overview of the project.",
+      "Analyzes project patterns and provides insights.",
+      "Calculate a simple hash of file content.",
+      "Check if we can use cached analysis.",
+      "Extract decorator name from AST node.",
+      "Extract base class name from AST node.",
+      "Calculate cyclomatic complexity of a function.",
+      "Saves the knowledge graph to a file.",
+      "Loads the knowledge graph from a file.",
+      "\n        Query the knowledge graph with natural language questions.\n        This provides the \"agentic search\" capability.\n        "
+    ],
+    "complexity": 125,
+    "dependencies": [],
+    "dependents": []
+  },
+  "/home/zohra-bouchamaoui/Desktop/gcode/gcode/cli.py": {
+    "path": "gcode/cli.py",
+    "absolute_path": "/home/zohra-bouchamaoui/Desktop/gcode/gcode/cli.py",
+    "file_type": "python",
+    "size": 157,
+    "lines": 10,
+    "last_modified": "2025-08-14T18:03:05.842452",
+    "analysis_timestamp": null,
+    "imports": [],
+    "from_imports": [
+      {
+        "module": "agent",
+        "names": [
+          "main"
+        ],
+        "level": 1
+      }
+    ],
+    "functions": [],
+    "classes": [],
+    "variables": [],
+    "docstrings": [
+      "\nGemini Agent CLI - A Cursor/Claude Code-like coding assistant\n"
+    ],
+    "complexity": 0,
+    "dependencies": [],
+    "dependents": []
+  },
+  "/home/zohra-bouchamaoui/Desktop/gcode/.gcode_context.json": {
+    "path": ".gcode_context.json",
+    "absolute_path": "/home/zohra-bouchamaoui/Desktop/gcode/.gcode_context.json",
+    "file_type": "config",
+    "size": 236,
+    "lines": 10,
+    "last_modified": "2025-08-14T23:06:15.252474",
+    "analysis_timestamp": null,
+    "config_type": "json",
+    "keys": [
+      "conversation_history",
+      "project_insights",
+      "last_analysis",
+      "knowledge_graph_files"
+    ],
+    "sections": [],
+    "dependencies": [],
+    "dependents": []
+  },
+  "/home/zohra-bouchamaoui/Desktop/gcode/.gcode_config.json": {
+    "path": ".gcode_config.json",
+    "absolute_path": "/home/zohra-bouchamaoui/Desktop/gcode/.gcode_config.json",
+    "file_type": "config",
+    "size": 259,
+    "lines": 5,
+    "last_modified": "2025-08-14T22:55:29.161386",
+    "analysis_timestamp": null,
+    "config_type": "json",
+    "keys": [
+      "selected_api",
+      "api_key",
+      "last_updated"
+    ],
+    "sections": [],
+    "dependencies": [],
+    "dependents": []
+  },
+  "/home/zohra-bouchamaoui/Desktop/gcode/.gcode_knowledge_graph.json": {
+    "path": ".gcode_knowledge_graph.json",
+    "absolute_path": "/home/zohra-bouchamaoui/Desktop/gcode/.gcode_knowledge_graph.json",
+    "file_type": "config",
+    "size": 110467,
+    "lines": 4079,
+    "last_modified": "2025-08-14T23:06:15.233023",
+    "analysis_timestamp": null,
+    "config_type": "json",
+    "keys": [
+      "__metadata__",
+      "/home/zohra-bouchamaoui/Desktop/gcode/setup.py",
+      "/home/zohra-bouchamaoui/Desktop/gcode/test_deep_understanding.py",
+      "/home/zohra-bouchamaoui/Desktop/gcode/__init__.py",
+      "/home/zohra-bouchamaoui/Desktop/gcode/test_autonomous_workflow.py",
+      "/home/zohra-bouchamaoui/Desktop/gcode/tests/test_file_watching.py",
+      "/home/zohra-bouchamaoui/Desktop/gcode/tests/test_openai_integration.py",
+      "/home/zohra-bouchamaoui/Desktop/gcode/tests/test_docker.py",
+      "/home/zohra-bouchamaoui/Desktop/gcode/tests/test_advanced_features.py",
+      "/home/zohra-bouchamaoui/Desktop/gcode/tests/test_collapsible.py",
+      "/home/zohra-bouchamaoui/Desktop/gcode/tests/test_property_agent.py",
+      "/home/zohra-bouchamaoui/Desktop/gcode/gcode/setup.py",
+      "/home/zohra-bouchamaoui/Desktop/gcode/gcode/tools.py",
+      "/home/zohra-bouchamaoui/Desktop/gcode/gcode/file_watcher.py",
+      "/home/zohra-bouchamaoui/Desktop/gcode/gcode/agent.py",
+      "/home/zohra-bouchamaoui/Desktop/gcode/gcode/test_docker.py",
+      "/home/zohra-bouchamaoui/Desktop/gcode/gcode/analyzer.py",
+      "/home/zohra-bouchamaoui/Desktop/gcode/gcode/cli.py",
+      "/home/zohra-bouchamaoui/Desktop/gcode/.gcode_context.json",
+      "/home/zohra-bouchamaoui/Desktop/gcode/.gcode_config.json",
+      "/home/zohra-bouchamaoui/Desktop/gcode/.gcode_knowledge_graph.json",
+      "/home/zohra-bouchamaoui/Desktop/gcode/.gcode/config.json",
+      "/home/zohra-bouchamaoui/Desktop/gcode/.devcontainer/devcontainer.json",
+      "/home/zohra-bouchamaoui/Desktop/gcode/docker-compose.yml",
+      "/home/zohra-bouchamaoui/Desktop/gcode/gcode/docker-compose.yml",
+      "/home/zohra-bouchamaoui/Desktop/gcode/GCODE.md",
+      "/home/zohra-bouchamaoui/Desktop/gcode/README.md",
+      "/home/zohra-bouchamaoui/Desktop/gcode/.gcode/commands/code-review.md",
+      "/home/zohra-bouchamaoui/Desktop/gcode/.gcode/commands/commit-push-pr.md",
+      "/home/zohra-bouchamaoui/Desktop/gcode/.gcode/commands/refactor.md",
+      "/home/zohra-bouchamaoui/Desktop/gcode/requirements.txt",
+      "__architecture__",
+      "__patterns__"
+    ],
+    "sections": [],
+    "dependencies": [],
+    "dependents": []
+  },
+  "/home/zohra-bouchamaoui/Desktop/gcode/.gcode/config.json": {
+    "path": ".gcode/config.json",
+    "absolute_path": "/home/zohra-bouchamaoui/Desktop/gcode/.gcode/config.json",
+    "file_type": "config",
+    "size": 1421,
+    "lines": 63,
+    "last_modified": "2025-08-14T20:19:43.226269",
+    "analysis_timestamp": null,
+    "config_type": "json",
+    "keys": [
+      "gcode",
+      "ui",
+      "git",
+      "code_review",
+      "refactor",
+      "testing",
+      "security",
+      "performance",
+      "docker"
+    ],
+    "sections": [],
+    "dependencies": [],
+    "dependents": []
+  },
+  "/home/zohra-bouchamaoui/Desktop/gcode/.devcontainer/devcontainer.json": {
+    "path": ".devcontainer/devcontainer.json",
+    "absolute_path": "/home/zohra-bouchamaoui/Desktop/gcode/.devcontainer/devcontainer.json",
+    "file_type": "config",
+    "size": 1613,
+    "lines": 57,
+    "last_modified": "2025-08-14T20:24:43.662298",
+    "analysis_timestamp": null,
+    "config_type": "json",
+    "keys": [
+      "name",
+      "dockerComposeFile",
+      "service",
+      "workspaceFolder",
+      "customizations",
+      "features",
+      "postCreateCommand",
+      "postStartCommand",
+      "forwardPorts",
+      "portsAttributes"
+    ],
+    "sections": [],
+    "dependencies": [],
+    "dependents": []
+  },
+  "/home/zohra-bouchamaoui/Desktop/gcode/docker-compose.yml": {
+    "path": "docker-compose.yml",
+    "absolute_path": "/home/zohra-bouchamaoui/Desktop/gcode/docker-compose.yml",
+    "file_type": "config",
+    "size": 1583,
+    "lines": 69,
+    "last_modified": "2025-08-14T20:55:55.829558",
+    "analysis_timestamp": null,
+    "config_type": "yml",
+    "keys": [
+      "services",
+      "gcode",
+      "build",
+      "container_name",
+      "volumes",
+      "- .",
+      "- ./.gcode",
+      "- ~/.gitconfig",
+      "- ~/.ssh",
+      "working_dir",
+      "environment",
+      "stdin_open",
+      "tty",
+      "command",
+      "profiles",
+      "gcode-dev",
+      "build",
+      "context",
+      "dockerfile",
+      "container_name",
+      "volumes",
+      "- .",
+      "- ./.gcode",
+      "- ~/.gitconfig",
+      "working_dir",
+      "environment",
+      "stdin_open",
+      "tty",
+      "command",
+      "profiles",
+      "gcode-web",
+      "build",
+      "container_name",
+      "ports",
+      "- \"8000",
+      "volumes",
+      "- .",
+      "- ./.gcode",
+      "working_dir",
+      "environment",
+      "command",
+      "profiles",
+      "networks",
+      "default",
+      "name"
+    ],
+    "sections": [],
+    "dependencies": [],
+    "dependents": []
+  },
+  "/home/zohra-bouchamaoui/Desktop/gcode/gcode/docker-compose.yml": {
+    "path": "gcode/docker-compose.yml",
+    "absolute_path": "/home/zohra-bouchamaoui/Desktop/gcode/gcode/docker-compose.yml",
+    "file_type": "config",
+    "size": 1599,
+    "lines": 69,
+    "last_modified": "2025-08-14T20:29:11.078944",
+    "analysis_timestamp": null,
+    "config_type": "yml",
+    "keys": [
+      "services",
+      "gcode",
+      "build",
+      "container_name",
+      "volumes",
+      "- ..",
+      "- ../.gcode",
+      "- ~/.gitconfig",
+      "- ~/.ssh",
+      "working_dir",
+      "environment",
+      "stdin_open",
+      "tty",
+      "command",
+      "profiles",
+      "gcode-dev",
+      "build",
+      "context",
+      "dockerfile",
+      "container_name",
+      "volumes",
+      "- ..",
+      "- ../.gcode",
+      "- ~/.gitconfig",
+      "working_dir",
+      "environment",
+      "stdin_open",
+      "tty",
+      "command",
+      "profiles",
+      "gcode-web",
+      "build",
+      "container_name",
+      "ports",
+      "- \"8000",
+      "volumes",
+      "- ..",
+      "- ../.gcode",
+      "working_dir",
+      "environment",
+      "command",
+      "profiles",
+      "networks",
+      "default",
+      "name"
+    ],
+    "sections": [],
+    "dependencies": [],
+    "dependents": []
+  },
+  "/home/zohra-bouchamaoui/Desktop/gcode/GCODE.md": {
+    "path": "GCODE.md",
+    "absolute_path": "/home/zohra-bouchamaoui/Desktop/gcode/GCODE.md",
+    "file_type": "docs",
+    "size": 3474,
+    "lines": 129,
+    "last_modified": "2025-08-14T22:59:57.737744",
+    "analysis_timestamp": null,
+    "doc_type": "md",
+    "headings": [
+      "GCODE Project Memory",
+      "\ud83c\udfd7\ufe0f Project Overview",
+      "\ud83d\udcca Project Statistics",
+      "\ud83c\udfdb\ufe0f Architecture",
+      "Entry Points",
+      "Main Modules",
+      "Packages",
+      "\u26a1 Technologies",
+      "Frameworks",
+      "Testing",
+      "Build Tools",
+      "\ud83d\udd0d Key Files Analysis",
+      "High-Level Structure",
+      "Dependencies Map",
+      "\ud83e\uddea Testing & Quality",
+      "Test Coverage",
+      "Code Quality",
+      "\ud83d\udca1 Recent Context",
+      "Last 0 Interactions",
+      "\ud83d\ude80 How to Use This Project",
+      "With gcode CLI",
+      "Ask questions about the codebase",
+      "Analyze code quality",
+      "Start file watching",
+      "Interactive Mode",
+      "\ud83d\udd04 Auto-Update"
+    ],
+    "links": [],
+    "code_blocks": 2,
+    "dependencies": [],
+    "dependents": []
+  },
+  "/home/zohra-bouchamaoui/Desktop/gcode/README.md": {
+    "path": "README.md",
+    "absolute_path": "/home/zohra-bouchamaoui/Desktop/gcode/README.md",
+    "file_type": "docs",
+    "size": 4927,
+    "lines": 212,
+    "last_modified": "2025-08-14T20:24:43.662610",
+    "analysis_timestamp": null,
+    "doc_type": "md",
+    "headings": [
+      "gcode",
+      "\ud83d\ude80 Quick Start",
+      "Install globally (like Claude Code):",
+      "From the gcode directory",
+      "Now use gcode anywhere!",
+      "Or run directly:",
+      "\ud83d\udc33 Docker Support",
+      "Quick Docker Usage:",
+      "Build and run gcode in Docker",
+      "Or use docker-compose",
+      "Development Container:",
+      "Start development environment",
+      "Or on Windows",
+      "Enter the container",
+      "VS Code Dev Container:",
+      "\u2728 What gcode does",
+      "\ud83c\udfaf Usage (Just like Claude Code!)",
+      "Interactive Mode (Default):",
+      "Enters interactive mode where you can chat naturally",
+      "Single Commands:",
+      "\ud83d\udd27 Features",
+      "Dual API Support",
+      "Real Collapsible Sections",
+      "Advanced Coding Tools",
+      "Docker Integration",
+      "\ud83c\udfa8 Commands",
+      "\ud83d\udd11 API Setup",
+      "Option 1: Environment Variables",
+      "For Gemini",
+      "For OpenAI",
+      "Option 2: .env File",
+      "Option 3: Docker Environment",
+      "Set in docker-compose.yml",
+      "\ud83d\ude80 Examples",
+      "Code Analysis",
+      "Git Operations",
+      "Testing",
+      "Documentation",
+      "\ud83d\udc33 Docker Profiles",
+      "CLI Profile (Default):",
+      "Runs gcode in interactive mode",
+      "Development Profile:",
+      "Development environment with full tooling",
+      "Web Profile:",
+      "Web interface on port 8000",
+      "\ud83c\udfaf Why gcode?",
+      "\ud83d\udd27 Development",
+      "Clone and install",
+      "Run tests",
+      "Run demo",
+      "Docker development",
+      "\ud83d\udcc4 License"
+    ],
+    "links": [],
+    "code_blocks": 17,
+    "dependencies": [],
+    "dependents": []
+  },
+  "/home/zohra-bouchamaoui/Desktop/gcode/.gcode/commands/code-review.md": {
+    "path": ".gcode/commands/code-review.md",
+    "absolute_path": "/home/zohra-bouchamaoui/Desktop/gcode/.gcode/commands/code-review.md",
+    "file_type": "docs",
+    "size": 1083,
+    "lines": 53,
+    "last_modified": "2025-08-14T20:19:11.086300",
+    "analysis_timestamp": null,
+    "doc_type": "md",
+    "headings": [
+      "Code Review",
+      "Usage",
+      "What it does",
+      "Examples",
+      "Review current file",
+      "Review specific file",
+      "Review entire directory",
+      "Review with specific focus",
+      "Output",
+      "Configuration"
+    ],
+    "links": [],
+    "code_blocks": 3,
+    "dependencies": [],
+    "dependents": []
+  },
+  "/home/zohra-bouchamaoui/Desktop/gcode/.gcode/commands/commit-push-pr.md": {
+    "path": ".gcode/commands/commit-push-pr.md",
+    "absolute_path": "/home/zohra-bouchamaoui/Desktop/gcode/.gcode/commands/commit-push-pr.md",
+    "file_type": "docs",
+    "size": 848,
+    "lines": 43,
+    "last_modified": "2025-08-14T20:18:53.702225",
+    "analysis_timestamp": null,
+    "doc_type": "md",
+    "headings": [
+      "Commit, Push, and Create PR",
+      "Usage",
+      "What it does",
+      "Requirements",
+      "Examples",
+      "Stage all changes and create PR",
+      "Stage specific files and create PR",
+      "Configuration"
+    ],
+    "links": [],
+    "code_blocks": 3,
+    "dependencies": [],
+    "dependents": []
+  },
+  "/home/zohra-bouchamaoui/Desktop/gcode/.gcode/commands/refactor.md": {
+    "path": ".gcode/commands/refactor.md",
+    "absolute_path": "/home/zohra-bouchamaoui/Desktop/gcode/.gcode/commands/refactor.md",
+    "file_type": "docs",
+    "size": 1521,
+    "lines": 67,
+    "last_modified": "2025-08-14T20:19:27.108824",
+    "analysis_timestamp": null,
+    "doc_type": "md",
+    "headings": [
+      "Refactor Code",
+      "Usage",
+      "What it does",
+      "Examples",
+      "Refactor current file for quality",
+      "Refactor specific file for performance",
+      "Refactor entire module for structure",
+      "Preview refactoring without applying",
+      "Apply refactoring automatically",
+      "Refactoring Types",
+      "Quality Improvements",
+      "Performance Optimizations",
+      "Structural Improvements",
+      "Configuration"
+    ],
+    "links": [],
+    "code_blocks": 3,
+    "dependencies": [],
+    "dependents": []
+  },
+  "/home/zohra-bouchamaoui/Desktop/gcode/requirements.txt": {
+    "path": "requirements.txt",
+    "absolute_path": "/home/zohra-bouchamaoui/Desktop/gcode/requirements.txt",
+    "file_type": "docs",
+    "size": 659,
+    "lines": 33,
+    "last_modified": "2025-08-14T21:15:07.672887",
+    "analysis_timestamp": null,
+    "doc_type": "txt",
+    "headings": [],
+    "links": [],
+    "code_blocks": 0,
+    "dependencies": [],
+    "dependents": []
+  },
+  "__architecture__": {
+    "type": "architecture_overview",
+    "timestamp": null,
+    "overview": {
+      "entry_points": [],
+      "main_modules": [
+        "setup.py",
+        "__init__.py",
+        "gcode/setup.py",
+        "gcode/tools.py",
+        "gcode/file_watcher.py",
+        "gcode/agent.py",
+        "gcode/analyzer.py",
+        "gcode/cli.py"
+      ],
+      "packages": [],
+      "test_files": [
+        "test_deep_understanding.py",
+        "test_autonomous_workflow.py",
+        "tests/test_file_watching.py",
+        "tests/test_openai_integration.py",
+        "tests/test_docker.py",
+        "tests/test_advanced_features.py",
+        "tests/test_collapsible.py",
+        "tests/test_property_agent.py",
+        "gcode/test_docker.py"
+      ],
+      "config_files": [
+        ".gcode_context.json",
+        ".gcode_config.json",
+        ".gcode_knowledge_graph.json",
+        ".gcode/config.json",
+        ".devcontainer/devcontainer.json",
+        "docker-compose.yml",
+        "gcode/docker-compose.yml"
+      ],
+      "documentation": [
+        "GCODE.md",
+        "README.md",
+        ".gcode/commands/code-review.md",
+        ".gcode/commands/commit-push-pr.md",
+        ".gcode/commands/refactor.md",
+        "requirements.txt"
+      ]
+    },
+    "total_files": 30,
+    "python_files": 17,
+    "test_coverage": 1.125
+  },
+  "__patterns__": {
+    "type": "project_patterns",
+    "timestamp": null,
+    "patterns": {
+      "frameworks": [
+        "Flask",
+        "Django",
+        "FastAPI"
+      ],
+      "testing_frameworks": [
+        "pytest",
+        "unittest"
+      ],
+      "build_tools": [
+        "Make",
+        "Docker"
+      ],
+      "code_quality": {},
+      "complexity_metrics": {}
+    }
+  }
+}

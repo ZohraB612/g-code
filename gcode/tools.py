@@ -906,3 +906,323 @@ def performance_profiling(file_path: str = None) -> str:
         
     except Exception as e:
         return f"Error during performance profiling: {e}"
+
+def query_codebase(question: str) -> str:
+    """
+    Answers questions about the codebase using the knowledge graph.
+    This provides the "agentic search" capability that makes Claude Code powerful.
+    
+    Args:
+        question: The question to ask about the codebase.
+    Returns:
+        The answer to the question based on deep codebase understanding.
+    """
+    try:
+        # Try to load the knowledge graph
+        knowledge_graph_file = ".gcode_knowledge_graph.json"
+        if not os.path.exists(knowledge_graph_file):
+            return "❌ Knowledge graph not found. Please run project analysis first with 'gcode analyze'."
+        
+        with open(knowledge_graph_file, "r") as f:
+            knowledge_graph = json.load(f)
+        
+        # Remove metadata entries
+        knowledge_graph = {k: v for k, v in knowledge_graph.items() if not k.startswith('__')}
+        
+        question = question.lower()
+        
+        # Query patterns for different types of questions
+        if "what functions are in" in question:
+            file_name = question.split("what functions are in")[-1].strip()
+            for file_path, file_info in knowledge_graph.items():
+                if file_name in file_path and file_info.get('functions'):
+                    funcs = [f['name'] for f in file_info['functions']]
+                    return f"✅ Functions in {file_path}:\n" + "\n".join([f"  • {func}" for func in funcs])
+        
+        elif "what are the dependencies of" in question:
+            file_name = question.split("what are the dependencies of")[-1].strip()
+            for file_path, file_info in knowledge_graph.items():
+                if file_name in file_path:
+                    deps = file_info.get('dependencies', [])
+                    if deps:
+                        return f"✅ Dependencies of {file_path}:\n" + "\n".join([f"  • {dep}" for dep in deps])
+                    else:
+                        return f"✅ {file_path} has no dependencies."
+        
+        elif "show me the architecture" in question or "explain the project structure" in question:
+            # Load architecture data
+            arch_file = ".gcode_knowledge_graph.json"
+            if os.path.exists(arch_file):
+                with open(arch_file, "r") as f:
+                    data = json.load(f)
+                    arch = data.get('__architecture__', {})
+                    if arch:
+                        overview = arch.get('overview', {})
+                        return f"🏗️  Project Architecture:\n" + \
+                               f"  • Entry points: {', '.join(overview.get('entry_points', []))}\n" + \
+                               f"  • Main modules: {len(overview.get('main_modules', []))}\n" + \
+                               f"  • Packages: {len(overview.get('packages', []))}\n" + \
+                               f"  • Test files: {len(overview.get('test_files', []))}\n" + \
+                               f"  • Test coverage: {arch.get('test_coverage', 0):.1%}"
+            
+            return "❌ Architecture data not available. Run project analysis first."
+        
+        elif "what frameworks are used" in question or "detect frameworks" in question:
+            # Load patterns data
+            patterns_file = ".gcode_knowledge_graph.json"
+            if os.path.exists(patterns_file):
+                with open(patterns_file, "r") as f:
+                    data = json.load(f)
+                    patterns = data.get('__patterns__', {})
+                    if patterns:
+                        frameworks = patterns.get('patterns', {}).get('frameworks', [])
+                        testing = patterns.get('patterns', {}).get('testing_frameworks', [])
+                        build_tools = patterns.get('patterns', {}).get('build_tools', [])
+                        
+                        result = "🔍 Detected Technologies:\n"
+                        if frameworks:
+                            result += f"  • Frameworks: {', '.join(frameworks)}\n"
+                        if testing:
+                            result += f"  • Testing: {', '.join(testing)}\n"
+                        if build_tools:
+                            result += f"  • Build Tools: {', '.join(build_tools)}\n"
+                        
+                        if not any([frameworks, testing, build_tools]):
+                            result += "  • No specific frameworks detected"
+                        
+                        return result
+            
+            return "❌ Framework data not available. Run project analysis first."
+        
+        elif "find files with" in question:
+            search_term = question.split("find files with")[-1].strip()
+            matching_files = []
+            
+            for file_path, file_info in knowledge_graph.items():
+                # Search in functions, classes, and file content
+                if search_term in file_path.lower():
+                    matching_files.append((file_path, "filename match"))
+                elif file_info.get('functions'):
+                    for func in file_info['functions']:
+                        if search_term in func['name'].lower():
+                            matching_files.append((file_path, f"function: {func['name']}"))
+                elif file_info.get('classes'):
+                    for cls in file_info['classes']:
+                        if search_term in cls['name'].lower():
+                            matching_files.append((file_path, f"class: {cls['name']}"))
+            
+            if matching_files:
+                result = f"🔍 Files containing '{search_term}':\n"
+                for file_path, reason in matching_files[:10]:  # Limit to 10 results
+                    result += f"  • {file_path} ({reason})\n"
+                if len(matching_files) > 10:
+                    result += f"  ... and {len(matching_files) - 10} more"
+                return result
+            else:
+                return f"❌ No files found containing '{search_term}'"
+        
+        elif "complexity analysis" in question or "code complexity" in question:
+            # Analyze code complexity
+            complex_files = []
+            for file_path, file_info in knowledge_graph.items():
+                if file_info.get('file_type') == 'python' and file_info.get('complexity', 0) > 5:
+                    complex_files.append((file_path, file_info['complexity']))
+            
+            if complex_files:
+                complex_files.sort(key=lambda x: x[1], reverse=True)
+                result = "⚠️  High Complexity Files (complexity > 5):\n"
+                for file_path, complexity in complex_files[:5]:
+                    result += f"  • {file_path}: complexity {complexity}\n"
+                return result
+            else:
+                return "✅ All Python files have reasonable complexity (≤5)"
+        
+        elif "test coverage" in question:
+            # Load test coverage data
+            arch_file = ".gcode_knowledge_graph.json"
+            if os.path.exists(arch_file):
+                with open(arch_file, "r") as f:
+                    data = json.load(f)
+                    arch = data.get('__architecture__', {})
+                    if arch:
+                        overview = arch.get('overview', {})
+                        test_files = len(overview.get('test_files', []))
+                        main_modules = len(overview.get('main_modules', []))
+                        coverage = test_files / max(main_modules, 1)
+                        
+                        return f"🧪 Test Coverage Analysis:\n" + \
+                               f"  • Test files: {test_files}\n" + \
+                               f"  • Main modules: {main_modules}\n" + \
+                               f"  • Coverage ratio: {coverage:.1%}\n" + \
+                               f"  • Status: {'Good' if coverage >= 0.8 else 'Fair' if coverage >= 0.5 else 'Needs improvement'}"
+            
+            return "❌ Test coverage data not available. Run project analysis first."
+        
+        else:
+            return "🤔 I can answer questions about:\n" + \
+                   "  • Functions in specific files\n" + \
+                   "  • File dependencies\n" + \
+                   "  • Project architecture\n" + \
+                   "  • Frameworks used\n" + \
+                   "  • Code complexity\n" + \
+                   "  • Test coverage\n" + \
+                   "  • Finding files with specific content\n" + \
+                   "Try asking about one of these topics!"
+
+    except FileNotFoundError:
+        return "❌ Knowledge graph not found. Please run project analysis first."
+    except Exception as e:
+        return f"❌ Error querying codebase: {e}"
+
+def deep_codebase_analysis(force_reanalysis: bool = False) -> str:
+    """
+    Performs a deep analysis of the entire codebase to build comprehensive understanding.
+    This is the core feature that provides "agentic search" capabilities.
+    
+    Args:
+        force_reanalysis: If True, reanalyze all files even if unchanged
+        
+    Returns:
+        Summary of the deep analysis results
+    """
+    try:
+        from .analyzer import create_analyzer
+        
+        analyzer = create_analyzer()
+        knowledge_graph = analyzer.analyze(force_reanalysis)
+        
+        # Extract key insights
+        arch = knowledge_graph.get('__architecture__', {})
+        patterns = knowledge_graph.get('__patterns__', {})
+        
+        summary = f"""
+🧠 Deep Codebase Analysis Complete!
+
+📊 Analysis Results:
+  • Total files analyzed: {len(knowledge_graph)}
+  • Python files: {len([f for f in knowledge_graph.values() if f.get('file_type') == 'python'])}
+  • Main modules: {len(arch.get('overview', {}).get('main_modules', []))}
+  • Entry points: {len(arch.get('overview', {}).get('entry_points', []))}
+  • Test files: {len(arch.get('overview', {}).get('test_files', []))}
+  • Test coverage: {arch.get('test_coverage', 0):.1%}
+
+🏗️  Architecture:
+  • Packages: {len(arch.get('overview', {}).get('packages', []))}
+  • Config files: {len(arch.get('overview', {}).get('config_files', []))}
+  • Documentation: {len(arch.get('overview', {}).get('documentation', []))}
+
+⚡ Technologies:
+  • Frameworks: {', '.join(patterns.get('patterns', {}).get('frameworks', ['None detected']))}
+  • Testing: {', '.join(patterns.get('patterns', {}).get('testing_frameworks', ['None detected']))}
+  • Build tools: {', '.join(patterns.get('patterns', {}).get('build_tools', ['None detected']))}
+
+💡 You can now ask questions like:
+  • "What functions are in agent.py?"
+  • "Show me the architecture"
+  • "What frameworks are used?"
+  • "Find files with authentication"
+        """.strip()
+        
+        return summary
+        
+    except Exception as e:
+        return f"❌ Deep analysis failed: {e}"
+
+def analyze_code_quality(file_path: str = None) -> str:
+    """
+    Analyzes code quality across the project or specific files.
+    
+    Args:
+        file_path: Specific file to analyze, or None for project-wide analysis
+        
+    Returns:
+        Code quality report
+    """
+    try:
+        if file_path:
+            # Analyze specific file
+            if not os.path.exists(file_path):
+                return f"❌ File not found: {file_path}"
+            
+            if file_path.endswith('.py'):
+                result = analyze_python_file(file_path)
+                if result:
+                    return f"""
+📊 Code Quality Report for {file_path}:
+  • Lines of code: {result.get('lines', 'N/A')}
+  • Issues found: {result.get('issues', 'N/A')}
+  • TODO items: {result.get('todos', 'N/A')}
+  • Print statements: {result.get('prints', 'N/A')}
+  • Long lines: {result.get('long_lines', 'N/A')}
+                    """.strip()
+            else:
+                return f"⚠️  File type not supported for quality analysis: {file_path}"
+        else:
+            # Project-wide analysis
+            knowledge_graph_file = ".gcode_knowledge_graph.json"
+            if not os.path.exists(knowledge_graph_file):
+                return "❌ Knowledge graph not found. Run deep analysis first."
+            
+            with open(knowledge_graph_file, "r") as f:
+                knowledge_graph = json.load(f)
+            
+            # Analyze Python files
+            python_files = [f for f in knowledge_graph.values() if f.get('file_type') == 'python']
+            
+            total_issues = 0
+            total_todos = 0
+            total_prints = 0
+            high_complexity_files = []
+            
+            for file_info in python_files:
+                if file_info.get('complexity', 0) > 10:
+                    high_complexity_files.append((file_info['path'], file_info['complexity']))
+            
+            summary = f"""
+📊 Project-Wide Code Quality Report:
+
+🐍 Python Files: {len(python_files)}
+⚠️  High Complexity Files (>10): {len(high_complexity_files)}
+
+🔍 Quality Metrics:
+  • Files with complexity >10: {len(high_complexity_files)}
+  • Average complexity: {sum(f.get('complexity', 0) for f in python_files) / max(len(python_files), 1):.1f}
+
+💡 Recommendations:
+  • {'Consider refactoring high complexity files' if high_complexity_files else 'Complexity levels look good'}
+  • Run 'gcode query "complexity analysis"' for detailed breakdown
+  • Use 'gcode query "test coverage"' to check testing status
+            """.strip()
+            
+            return summary
+            
+    except Exception as e:
+        return f"❌ Code quality analysis failed: {e}"
+
+# Update AVAILABLE_TOOLS to include new deep analysis tools
+AVAILABLE_TOOLS = {
+    # ... existing tools ...
+    
+    # Deep Codebase Understanding Tools
+    "query_codebase": {
+        "function": query_codebase,
+        "description": "Query the codebase with natural language questions using deep understanding",
+        "parameters": {
+            "question": "The question to ask about the codebase"
+        }
+    },
+    "deep_codebase_analysis": {
+        "function": deep_codebase_analysis,
+        "description": "Perform comprehensive analysis of entire codebase to build knowledge graph",
+        "parameters": {
+            "force_reanalysis": "Whether to reanalyze all files even if unchanged"
+        }
+    },
+    "analyze_code_quality": {
+        "function": analyze_code_quality,
+        "description": "Analyze code quality across project or specific files",
+        "parameters": {
+            "file_path": "Specific file to analyze, or None for project-wide analysis"
+        }
+    }
+}
