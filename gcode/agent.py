@@ -34,6 +34,8 @@ from .tools import (
     performance_profiling
 )
 from dotenv import load_dotenv
+import pickle
+from .file_watcher import FileWatcher, create_file_watcher
 
 load_dotenv()
 
@@ -725,6 +727,16 @@ Remember: You're a coding partner, not just a tool executor. Complete the entire
         
         # Initialize with project analysis
         self._analyze_project_context()
+        
+        # Initialize file watcher
+        self.file_watcher = None
+        self.watching_files = False
+        self.auto_analysis = True
+        self.auto_watch_files = True  # New: control auto-file-watching
+        
+        # Automatically start file watching for agentic behavior
+        if self.auto_watch_files:
+            self._auto_start_file_watching()
     
     def _configure_api(self):
         """Configure the selected API with the provided key."""
@@ -1007,21 +1019,26 @@ Pro Tips:
             print(self.ui.error(f"Could not analyze project: {e}"))
     
     def converse(self, prompt: str, interactive=False):
-        """Handles the conversation flow with advanced context awareness."""
+        """Handles the conversation flow with advanced context awareness - like Claude Code."""
         if interactive:
             print(self.ui.section("Interactive Mode", collapsible=False))
-            print(self.ui.info("Type 'exit' or 'quit' to end the session"))
-            print(self.ui.info("Type 'help' for available commands"))
-            print(self.ui.info("Type 'context' to see project insights"))
-            print(self.ui.info("Type 'interactive' to enter collapsible section mode"))
-            print(colored("─" * 50, Colors.SECONDARY))
+            print(self.ui.info("Welcome to gcode! I'm your AI coding companion."))
+            print(self.ui.info("I understand your codebase and can help you code faster."))
+            print()
+            print(self.ui.info("Commands:"))
+            print(self.ui.info("  • Type natural language requests (e.g., 'explain this function')"))
+            print(self.ui.info("  • Type 'help' for available commands"))
+            print(self.ui.info("  • Type 'context' to see project insights"))
+            print(self.ui.info("  • Type 'demo' to see collapsible sections"))
+            print(self.ui.info("  • Type 'exit' or 'quit' to end the session"))
+            print(colored("─" * 60, Colors.SECONDARY))
             
             while True:
                 try:
-                    user_input = input(colored("\nYou: ", Colors.PRIMARY)).strip()
+                    user_input = input(colored("\n💬 You: ", Colors.PRIMARY)).strip()
                     
                     if user_input.lower() in ['exit', 'quit']:
-                        print(self.ui.info("Session ended. Goodbye!"))
+                        print(self.ui.info("Session ended. Happy coding!"))
                         break
                     elif user_input.lower() == 'help':
                         self._show_help()
@@ -1029,18 +1046,17 @@ Pro Tips:
                     elif user_input.lower() == 'context':
                         self._show_project_context()
                         continue
-                    elif user_input.lower() == 'interactive':
-                        self._enter_interactive_mode()
+                    elif user_input.lower() == 'demo':
+                        self._demo_collapsible_sections()
                         continue
                     elif user_input.lower() == 'toggle':
                         self._toggle_sections()
                         continue
-                    elif user_input.lower() == 'demo':
-                        self._demo_collapsible_sections()
-                        continue
                     elif not user_input:
                         continue
                     
+                    # Process natural language request like Claude Code
+                    print(colored(f"\n🤖 gcode: ", Colors.SUCCESS) + colored("Processing your request...", Colors.INFO))
                     self._process_request(user_input)
                     
                 except KeyboardInterrupt:
@@ -1050,32 +1066,288 @@ Pro Tips:
                     print(self.ui.info("End of input. Goodbye!"))
                     break
         else:
-            # Single request mode
+            # Single request mode - like Claude Code
             self._process_request(prompt)
+
+    def start_file_watching(self, project_path: str = None):
+        """Start watching for file changes and automatically analyze them."""
+        if self.watching_files:
+            print("⚠️  File watching is already active.")
+            return
+            
+        if project_path is None:
+            project_path = os.getcwd()
+            
+        try:
+            # Create file watcher with callback to gcode analysis
+            self.file_watcher = create_file_watcher(project_path, self._on_file_change)
+            self.file_watcher.start()
+            self.watching_files = True
+            
+            # Only show verbose output if manually started
+            if not hasattr(self, '_auto_started'):
+                print(f"🔍 File watching started for: {project_path}")
+                print("📝 Any file changes will automatically trigger analysis.")
+                print("💡 Use 'watch stop' to stop watching, 'watch status' for info.")
+            
+        except Exception as e:
+            print(f"❌ Failed to start file watching: {e}")
+            print("💡 Make sure 'watchdog' is installed: pip install watchdog")
+    
+    def stop_file_watching(self):
+        """Stop watching for file changes."""
+        if not self.watching_files or self.file_watcher is None:
+            print("⚠️  File watching is not active.")
+            return
+            
+        self.file_watcher.stop()
+        self.file_watcher = None
+        self.watching_files = False
+        print("🔍 File watching stopped.")
+    
+    def _on_file_change(self, event_type: str, file_path: str):
+        """Callback for file changes - automatically analyze modified files."""
+        if not self.auto_analysis:
+            return
+            
+        try:
+            # Get relative path for display
+            rel_path = os.path.relpath(file_path, os.getcwd())
+            
+            if event_type == 'modified':
+                print(f"\n🔍 File changed: {rel_path}")
+                print("🤖 Automatically analyzing changes...")
+                
+                # Analyze the changed file
+                self._auto_analyze_file(file_path)
+                
+            elif event_type == 'created':
+                print(f"\n📁 New file: {rel_path}")
+                print("🤖 Analyzing new file...")
+                
+                # Analyze the new file
+                self._auto_analyze_file(file_path)
+                
+            elif event_type == 'deleted':
+                print(f"\n🗑️  File deleted: {rel_path}")
+                
+        except Exception as e:
+            print(f"❌ Error in auto-analysis: {e}")
+    
+    def _auto_analyze_file(self, file_path: str):
+        """Automatically analyze a file when it changes."""
+        try:
+            # Check if it's a Python file
+            if file_path.endswith('.py'):
+                print("🐍 Python file detected - running quality analysis...")
+                
+                # Quick quality check
+                result = analyze_python_file(file_path)
+                if result:
+                    print("✅ Auto-analysis complete!")
+                    print(f"📊 Lines: {result.get('lines', 'N/A')}")
+                    print(f"🔍 Issues: {result.get('issues', 'N/A')}")
+                    
+                    # If there are issues, offer to fix them
+                    if result.get('issues') and result['issues'] > 0:
+                        print("💡 Use 'gcode fix-issues' to automatically fix detected problems.")
+            
+            # Check if it's a configuration file
+            elif any(file_path.endswith(ext) for ext in ['.json', '.yaml', '.yml', '.toml']):
+                print("⚙️  Configuration file detected - checking syntax...")
+                # Could add config validation here
+            
+            # Check if it's a documentation file
+            elif any(file_path.endswith(ext) for ext in ['.md', '.txt', '.rst']):
+                print("📚 Documentation file detected - checking formatting...")
+                # Could add markdown linting here
+                
+        except Exception as e:
+            print(f"⚠️  Auto-analysis failed: {e}")
+    
+    def _auto_start_file_watching(self):
+        """Automatically start file watching for proactive monitoring."""
+        try:
+            # Only auto-start if we're in a project directory (has Python files, git, etc.)
+            if self._should_auto_watch():
+                self.start_file_watching()
+                
+                # Mark as auto-started to avoid duplicate messages
+                self._auto_started = True
+                
+                # Show a subtle notification
+                print("🔍 Auto-watching files for proactive analysis...")
+                print("💡 Use 'watch stop' to disable, 'watch status' for info")
+            else:
+                print("💡 Not auto-watching (not in a project directory)")
+                print("💡 Use 'watch start' to manually begin monitoring")
+                
+        except Exception as e:
+            # Don't fail initialization if file watching fails
+            print(f"⚠️  Auto-file-watching failed: {e}")
+            print("💡 You can still manually start with 'watch start'")
+    
+    def _should_auto_watch(self) -> bool:
+        """Determine if we should automatically start file watching."""
+        current_dir = Path.cwd()
+        
+        # Check for project indicators
+        project_indicators = [
+            current_dir / '.git',           # Git repository
+            current_dir / 'requirements.txt', # Python project
+            current_dir / 'package.json',   # Node.js project
+            current_dir / 'Cargo.toml',     # Rust project
+            current_dir / 'pom.xml',        # Java/Maven project
+            current_dir / 'build.gradle',   # Java/Gradle project
+            current_dir / 'Makefile',       # C/C++ project
+            current_dir / 'CMakeLists.txt', # CMake project
+        ]
+        
+        # Check if any project indicators exist
+        has_project_files = any(indicator.exists() for indicator in project_indicators)
+        
+        # Also check for source code files
+        has_source_files = any(
+            current_dir.glob(f"*.{ext}") 
+            for ext in ['py', 'js', 'ts', 'java', 'cpp', 'c', 'rs', 'go']
+        )
+        
+        return has_project_files or has_source_files
+    
+    def toggle_auto_watch(self):
+        """Toggle automatic file watching on/off."""
+        self.auto_watch_files = not self.auto_watch_files
+        status = "enabled" if self.auto_watch_files else "disabled"
+        print(f"🔍 Auto-file-watching {status}.")
+        
+        # If enabling and not currently watching, start now
+        if self.auto_watch_files and not self.watching_files:
+            self._auto_start_file_watching()
+        # If disabling and currently watching, stop now
+        elif not self.auto_watch_files and self.watching_files:
+            self.stop_file_watching()
+    
+    def get_watch_status(self):
+        """Get current file watching status."""
+        if not self.watching_files or self.file_watcher is None:
+            return {
+                'active': False,
+                'message': 'File watching is not active'
+            }
+        
+        status = self.file_watcher.get_status()
+        return {
+            'active': True,
+            'project_path': status['project_path'],
+            'files_monitored': status['files_monitored'],
+            'auto_analysis': self.auto_analysis
+        }
+    
+    def toggle_auto_analysis(self):
+        """Toggle automatic analysis on/off."""
+        self.auto_analysis = not self.auto_analysis
+        status = "enabled" if self.auto_analysis else "disabled"
+        print(f"🔍 Auto-analysis {status}.")
+    
+    def watch_commands(self, command: str):
+        """Handle file watching commands."""
+        if command == 'start':
+            self.start_file_watching()
+        elif command == 'stop':
+            self.stop_file_watching()
+        elif command == 'status':
+            status = self.get_watch_status()
+            if status['active']:
+                print(f"🔍 File watching: ACTIVE")
+                print(f"📁 Project: {status['project_path']}")
+                print(f"📊 Files monitored: {status['files_monitored']}")
+                print(f"🤖 Auto-analysis: {'ON' if status['auto_analysis'] else 'OFF'}")
+                print(f"🔄 Auto-watch: {'ON' if self.auto_watch_files else 'OFF'}")
+            else:
+                print(f"🔍 File watching: INACTIVE")
+                print(f"💡 Use 'watch start' to begin monitoring")
+                print(f"🔄 Auto-watch: {'ON' if self.auto_watch_files else 'OFF'}")
+        elif command == 'auto-on':
+            self.auto_analysis = True
+            print("🤖 Auto-analysis enabled.")
+        elif command == 'auto-off':
+            self.auto_analysis = False
+            print("🤖 Auto-analysis disabled.")
+        elif command == 'auto-watch-on':
+            self.toggle_auto_watch()
+        elif command == 'auto-watch-off':
+            self.toggle_auto_watch()
+        else:
+            print("🔍 File watching commands:")
+            print("  watch start         - Start watching for changes")
+            print("  watch stop          - Stop watching")
+            print("  watch status        - Show current status")
+            print("  watch auto-on       - Enable auto-analysis")
+            print("  watch auto-off      - Disable auto-analysis")
+            print("  watch auto-watch-on - Enable auto-file-watching")
+            print("  watch auto-watch-off- Disable auto-file-watching")
 
     def _enter_interactive_mode(self):
         """Enter the interactive collapsible section mode."""
-        print(self.ui.info("Entering interactive mode..."))
-        print(self.ui.info("Use SPACE to toggle sections, ENTER to continue, Q to quit"))
+        print(self.ui.success("🎯 Interactive Mode - Collapsible Sections"))
+        print("=" * 50)
         
-        # Create some demo sections
-        self.ui.section("Project Overview", 
-                       f"Python Files: {self.context.project_insights.get('total_python_files', 0)}\n" +
-                       f"Main Files: {', '.join(self.context.project_insights.get('main_files', [])[:5])}\n" +
-                       f"Requirements: {'Yes' if self.context.project_insights.get('has_requirements') else 'No'}", 
-                       collapsible=True, expanded=False)
+        # Show available commands
+        print("Available Commands:")
+        print("- Type your request normally (e.g., 'create a new file called main.py')")
+        print("- 'help' - Show this help message")
+        print("- 'context' - Show project insights")
+        print("- 'interactive' - Enter collapsible section mode")
+        print("- 'toggle' - Toggle collapsible sections")
+        print("- 'demo' - Demonstrate collapsible sections")
+        print("- 'watch start' - Start file watching")
+        print("- 'watch stop' - Stop file watching")
+        print("- 'watch status' - Show file watching status")
+        print("- 'exit' or 'quit' - End the session")
         
-        self.ui.section("Recent Activity", 
-                       "\n".join([f"{i+1}. {conv['user_input'][:50]}..." 
-                                 for i, conv in enumerate(self.context.conversation_history[-3:])]), 
-                       collapsible=True, expanded=False)
+        print("\nExamples:")
+        print("- 'Create a Python file with a hello world function'")
+        print("- 'Show me the project structure'")
+        print("- 'Read the contents of agent.py'")
+        print("- 'Run ls -la to see files'")
+        print("- 'Analyze this code and suggest improvements'")
+        print("- 'Start watching for file changes'")
         
-        self.ui.section("Available Tools", 
-                       "\n".join([f"• {tool}" for tool in list(AVAILABLE_TOOLS.keys())[:10]]), 
-                       collapsible=True, expanded=False)
+        print("\nAdvanced Features (Beyond Cursor/Claude Code):")
         
-        # Start interactive rendering
-        self.ui.interactive_render()
+        print("\nGit Integration:")
+        print("- 'Commit my changes with an AI-generated message'")
+        print("- 'Create a new feature branch called user-auth'")
+        print("- 'Resolve merge conflicts automatically'")
+        print("- 'Show git status and recent changes'")
+        
+        print("\nReal-time Monitoring:")
+        print("- 'Monitor code quality across the project'")
+        print("- 'Auto-fix common code quality issues'")
+        print("- 'Check for performance bottlenecks'")
+        print("- 'Scan for security vulnerabilities'")
+        
+        print("\nFile Watching:")
+        print("- 'watch start' - Begin monitoring file changes")
+        print("- 'watch stop' - Stop monitoring")
+        print("- 'watch status' - Show monitoring status")
+        print("- 'watch auto-on' - Enable automatic analysis")
+        print("- 'watch auto-off' - Disable automatic analysis")
+        
+        print("\nAdvanced Testing:")
+        print("- 'Generate property-based tests for agent.py'")
+        print("- 'Run security vulnerability scan'")
+        print("- 'Profile performance of the codebase'")
+        print("- 'Create comprehensive test suites'")
+        
+        print("\nPro Tips:")
+        print("- 'Help me refactor this code for better performance'")
+        print("- 'Suggest architectural improvements for this project'")
+        print("- 'Automate my development workflow'")
+        print("- 'Set up CI/CD pipeline for this project'")
+        
+        # Wait for user input
+        input() # Wait for user input
     
     def _toggle_sections(self):
         """Toggle the expanded state of all collapsible sections."""
@@ -1114,13 +1386,19 @@ Pro Tips:
         print(self.ui.info("Press ENTER to continue..."))
         input() # Wait for user input
 
-    def _process_request(self, prompt: str):
-        """Process a single user request with enhanced context awareness."""
+    def _process_request(self, request: str):
+        """Process a user request with enhanced file watching support."""
+        # Check for watch commands first
+        if request.startswith('watch '):
+            command = request[6:].strip()
+            self.watch_commands(command)
+            return "File watching command processed."
+        
         # Create collapsible section for request processing
         processing_content = self.ui.info("Processing your request...")
         
         # Get relevant context
-        relevant_context = self.context.get_relevant_context(prompt)
+        relevant_context = self.context.get_relevant_context(request)
         if relevant_context:
             context_info = self.ui.info(f"Found {len(relevant_context)} relevant context items")
             processing_content += "\n" + context_info
@@ -1129,7 +1407,7 @@ Pro Tips:
         
         try:
             # Enhance prompt with context
-            enhanced_prompt = self._enhance_prompt_with_context(prompt, relevant_context)
+            enhanced_prompt = self._enhance_prompt_with_context(request, relevant_context)
             
             # Send the enhanced prompt and get response from the configured API
             response = self._call_api(enhanced_prompt)
@@ -1155,25 +1433,26 @@ Pro Tips:
                 print(self.ui.section("Tool Execution", execution_content, collapsible=True, expanded=True))
                 
                 # Check if we need to continue with more tools
-                self._check_for_more_work(prompt, plan_text)
+                self._check_for_more_work(request, plan_text)
                 
                 print(self.ui.success("Task completed successfully"))
                 
                 # Provide proactive suggestions
-                self._provide_proactive_suggestions(prompt, tools_used)
+                self._provide_proactive_suggestions(request, tools_used)
             else:
                 print(self.ui.info(plan_text if plan_text else "Request processed"))
             
             # Save interaction to context
-            self.context.add_interaction(prompt, plan_text, tools_used)
+            self.context.add_interaction(request, plan_text, tools_used)
                 
         except Exception as e:
             print(self.ui.error(f"Error: {str(e)}"))
             print(self.ui.info("Please try again or rephrase your request"))
 
 def main():
-    """Main entry point for the CLI."""
+    """Main entry point for the CLI - works like Claude Code."""
     if len(sys.argv) < 2:
+        # No arguments - enter Claude Code-style interactive mode
         print(colored("gcode", Colors.HIGHLIGHT + Colors.BOLD))
         print(colored("Your intelligent coding companion", Colors.SECONDARY))
         print()
@@ -1185,16 +1464,22 @@ def main():
         print(colored("  • Provide real-time coding assistance", Colors.INFO))
         print()
         print(colored("Usage:", Colors.BOLD))
-        print(colored("  gcode 'your coding request'", Colors.SUCCESS))
-        print(colored("  gcode --interactive", Colors.SUCCESS))
+        print(colored("  gcode                    - Enter interactive mode (like Claude Code)", Colors.SUCCESS))
+        print(colored("  gcode 'your request'     - Execute a single coding request", Colors.SUCCESS))
+        print(colored("  gcode --help             - Show advanced options", Colors.SUCCESS))
         print()
         print(colored("Examples:", Colors.BOLD))
-        print(colored("  gcode 'create a Python class for user management'", Colors.INFO))
-        print(colored("  gcode 'refactor this function for better performance'", Colors.INFO))
+        print(colored("  gcode 'explain this function'", Colors.INFO))
+        print(colored("  gcode 'refactor this code for better performance'", Colors.INFO))
         print(colored("  gcode 'generate unit tests for the auth module'", Colors.INFO))
-        print(colored("  gcode 'analyze code quality and suggest improvements'", Colors.INFO))
+        print(colored("  gcode 'commit my changes with a descriptive message'", Colors.INFO))
         print()
         print(colored("Type 'gcode --help' for advanced options and API management", Colors.HIGHLIGHT))
+        print()
+        
+        # Enter Claude Code-style interactive mode
+        agent = GeminiAgent()
+        agent.converse("", interactive=True)
         return
     
     # Check for help command
@@ -1207,7 +1492,7 @@ def main():
         agent = GeminiAgent()
         agent.converse("", interactive=True)
     else:
-        # Single request mode
+        # Single request mode - like Claude Code
         prompt = " ".join(sys.argv[1:])
         agent = GeminiAgent()
         agent.converse(prompt, interactive=False)

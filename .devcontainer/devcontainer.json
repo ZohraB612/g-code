@@ -1,0 +1,56 @@
+{
+  "name": "gcode Development Environment",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "gcode-dev",
+  "workspaceFolder": "/app",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.black-formatter",
+        "ms-python.isort",
+        "ms-python.flake8",
+        "ms-python.pytest-adapter",
+        "ms-vscode.vscode-json",
+        "ms-vscode.vscode-markdown",
+        "eamodio.gitlens",
+        "ms-vscode.vscode-docker",
+        "ms-vscode.remote-containers"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": false,
+        "python.linting.flake8Enabled": true,
+        "python.formatting.provider": "black",
+        "python.sortImports.args": ["--profile", "black"],
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.organizeImports": true
+        },
+        "files.exclude": {
+          "**/__pycache__": true,
+          "**/*.pyc": true,
+          "**/.pytest_cache": true
+        }
+      }
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.11"
+    },
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "postCreateCommand": "pip install -e .",
+  "postStartCommand": "gcode --help",
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": {
+      "label": "gcode Web Interface",
+      "onAutoForward": "notify"
+    }
+  }
+}

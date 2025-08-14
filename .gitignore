@@ -6,3 +6,5 @@ venv/
 
 # Python cache
 __pycache__/
+.gcode_config.json
+.gcode_config.json

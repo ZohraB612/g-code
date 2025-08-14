@@ -1,0 +1,68 @@
+services:
+  gcode:
+    build: .
+    container_name: gcode-cli
+    volumes:
+      # Mount gcode directory for code analysis
+      - .:/workspace
+      # Mount gcode configuration
+      - ./.gcode:/home/gcode/.gcode
+      # Mount git config for git operations
+      - ~/.gitconfig:/home/gcode/.gitconfig:ro
+      # Mount SSH keys for git operations (optional)
+      - ~/.ssh:/home/gcode/.ssh:ro
+    working_dir: /workspace
+    environment:
+      # API keys can be set here or in .env file
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      # Python path
+      - PYTHONPATH=/app
+    stdin_open: true
+    tty: true
+    # For interactive mode
+    command: gcode
+    profiles:
+      - cli
+      - interactive
+
+  gcode-dev:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: gcode-dev
+    volumes:
+      - .:/app
+      - ./.gcode:/home/gcode/.gcode
+      - ~/.gitconfig:/home/gcode/.gitconfig:ro
+    working_dir: /app
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - PYTHONPATH=/app
+    stdin_open: true
+    tty: true
+    command: bash
+    profiles:
+      - dev
+
+  gcode-web:
+    build: .
+    container_name: gcode-web
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/workspace
+      - ./.gcode:/home/gcode/.gcode
+    working_dir: /workspace
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - PYTHONPATH=/app
+    command: gcode --web
+    profiles:
+      - web
+
+networks:
+  default:
+    name: gcode-network

@@ -1,0 +1,62 @@
+{
+  "gcode": {
+    "version": "1.0.0",
+    "default_api": "auto",
+    "auto_save_context": true,
+    "max_context_items": 50
+  },
+  "ui": {
+    "theme": "dark",
+    "collapsible_sections": true,
+    "default_expanded": ["Project Analysis", "Plan"],
+    "colors": {
+      "primary": "#007acc",
+      "success": "#28a745",
+      "warning": "#ffc107",
+      "error": "#dc3545"
+    }
+  },
+  "git": {
+    "branch_prefix": "feature/",
+    "commit_template": "conventional",
+    "auto_push": false,
+    "pr_template": "default"
+  },
+  "code_review": {
+    "security_level": "strict",
+    "quality_threshold": 0.8,
+    "ignore_patterns": ["*.test.py", "legacy/*", "vendor/*"],
+    "max_file_size": "1MB"
+  },
+  "refactor": {
+    "auto_apply": false,
+    "backup_files": true,
+    "max_function_length": 20,
+    "complexity_threshold": 10,
+    "preserve_formatting": true
+  },
+  "testing": {
+    "framework": "pytest",
+    "coverage_threshold": 80,
+    "generate_mocks": true,
+    "property_based": true
+  },
+  "security": {
+    "scan_dependencies": true,
+    "vulnerability_check": true,
+    "secrets_detection": true,
+    "compliance_checks": ["OWASP", "CWE"]
+  },
+  "performance": {
+    "profiling": true,
+    "memory_analysis": true,
+    "bottleneck_detection": true,
+    "optimization_suggestions": true
+  },
+  "docker": {
+    "enabled": true,
+    "auto_build": false,
+    "registry": "ghcr.io",
+    "tag_latest": true
+  }
+}
