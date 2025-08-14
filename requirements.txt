@@ -20,7 +20,7 @@ pyasn1_modules==0.4.2
 pydantic==2.11.7
 pydantic_core==2.33.2
 pyparsing==3.2.3
-python-dotenv==1.1.1
+python-dotenv==1.0.0
 requests==2.32.4
 rsa==4.9.1
 tqdm==4.67.1
@@ -28,3 +28,4 @@ typing-inspection==0.4.1
 typing_extensions==4.14.1
 uritemplate==4.2.0
 urllib3==2.5.0
+openai==0.28.1
