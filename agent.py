@@ -1,13 +1,14 @@
 import google.generativeai as genai
 import os
-import re
 from .tools import read_file, write_file, run_shell_command, get_project_structure
 from dotenv import load_dotenv
 
 load_dotenv()
 
+# Configure the Gemini API key
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
+# Define the available tools for the agent
 tools = [
     read_file,
     write_file,
@@ -15,68 +16,88 @@ tools = [
     get_project_structure
 ]
 
+# A mapping of tool names to their functions for easy lookup
+AVAILABLE_TOOLS = {
+    "read_file": read_file,
+    "write_file": write_file,
+    "run_shell_command": run_shell_command,
+    "get_project_structure": get_project_structure
+}
+
 class GeminiAgent:
+    """A conversational agent powered by the Gemini model."""
     def __init__(self, model_name="gemini-1.5-flash-latest"):
+        """Initializes the agent with a model and chat history."""
         self.model = genai.GenerativeModel(model_name=model_name, tools=tools)
+        # Start the chat with an initial system prompt.
+        # This prompt instructs the model to return the plan and tools in a single response.
         self.chat = self.model.start_chat(history=[
             {"role": "user", "parts": [
                 "You are an expert software engineer and a pair-programmer. "
                 "Your goal is to help me with my coding projects. "
                 "You have access to a set of tools to interact with the file system and terminal. "
-                "Always make a plan before performing any actions. "
-                "The plan must be a clear, numbered list of steps. "
-                "Do not execute any tool calls until I explicitly approve the plan."
+                "In a single response, you must first provide a step-by-step plan in plain text. "
+                "After the plan, provide all the necessary tool calls to execute that plan. "
+                "I will review the plan and then approve the tool calls one by one."
             ]}
         ])
 
     def converse(self, prompt: str):
+        """Handles the conversation flow using a single API call to get both plan and tools."""
         print("AGENT: Thinking...")
+        # 1. Send the prompt and get a single response containing the plan and tool calls.
         response = self.chat.send_message(prompt)
 
-        # Check for and display a plan
-        if response.text:
+        # 2. Extract the plan (text) and tool calls from the response.
+        response_parts = response.candidates[0].content.parts
+        plan_text = "".join(part.text for part in response_parts if part.text).strip()
+        tool_calls = [part.function_call for part in response_parts if part.function_call]
+
+        # 3. Display the plan for approval.
+        if plan_text:
             print("\nAGENT'S PLAN:")
-            print(response.text)
-            
-            # Ask the user for approval
-            approval = input("\nDo you approve this plan? (yes/no): ").lower()
-            if approval != 'yes':
-                print("Plan denied. Conversation ended.")
+            print(plan_text)
+        else:
+            print("AGENT: I could not come up with a plan. Please try a different prompt.")
+            # If there's no plan, we can't proceed.
+            if not tool_calls:
                 return
 
-        # Start the execution loop for each step in the plan
-        for step in response.text.split('\n'):
-            if not step.strip():
-                continue
+        # 4. If there are tool calls, ask for approval and execute them.
+        if tool_calls:
+            # General approval for the plan before executing tools.
+            approval = input("\nDo you approve this plan and want to proceed with tool execution? (yes/no): ").lower()
+            if approval.strip() != 'yes':
+                print("Plan denied. Conversation ended.")
+                return
             
-            print(f"\nAGENT: Executing step: {step.strip()}")
-            
-            # Prompt the model to take the next action for this step
-            next_action_response = self.chat.send_message(f"Execute step: {step.strip()}")
-            
-            if next_action_response.tool_calls:
-                for tool_call in next_action_response.tool_calls:
-                    func_name = tool_call.function.name
-                    func_args = dict(tool_call.function.args)
+            # Iterate through and execute each tool call with individual approval.
+            for tool_call in tool_calls:
+                func_name = tool_call.name
+                func_to_call = AVAILABLE_TOOLS.get(func_name)
+                
+                if not func_to_call:
+                    print(f"Error: Unknown tool '{func_name}'")
+                    continue
 
-                    print(f"AGENT PROPOSES: {func_name}({func_args})")
-                    
-                    # Ask for approval for each individual tool call
-                    tool_approval = input("Approve this tool call? (yes/no): ").lower()
-                    if tool_approval != 'yes':
-                        print("Tool call denied. Aborting task.")
-                        return
+                func_args = dict(tool_call.args)
+                print(f"\nAGENT PROPOSES: {func_name}({func_args})")
+                
+                tool_approval = input("Approve this tool call? (yes/no): ").lower()
+                if tool_approval.strip() != 'yes':
+                    print("Tool call denied. Aborting task.")
+                    return
 
-                    # Execute the approved tool call
-                    if func_name in globals():
-                        result = globals()[func_name](**func_args)
-                        print(f"RESULT:\n{result}")
+                print(f"AGENT: Executing {func_name}...")
+                result = func_to_call(**func_args)
+                print(f"RESULT:\n{result}")
 
-                        # Send the result back to the model
-                        final_response = self.chat.send_message(
-                            genai.protos.Content(
-                                parts=[genai.protos.Part(function_response=genai.protos.FunctionResponse(name=func_name, response={'content': result}))]
-                            )
-                        )
-                        print("\nAGENT RESPONSE:")
-                        print(final_response.text)
+                # Send the result of the tool call back to the model for a final summary.
+                # In this version, we send the result as a simple text message
+                final_response = self.chat.send_message(f"Tool {func_name} returned: {result}")
+                
+                print("\nAGENT RESPONSE:")
+                print(final_response.text)
+        else:
+            print("\nAGENT: Task complete.")
+

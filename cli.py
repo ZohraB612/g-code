@@ -18,5 +18,5 @@ def main():
     # Send the prompt to the agent and start the conversation
     agent.converse(full_prompt)
 
-if name == "__main__":
+if __name__ == "__main__":
     main()
