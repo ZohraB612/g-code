@@ -355,40 +355,59 @@ class ProfessionalUI:
         print(colored(prompt, Colors.SECONDARY))
         
         try:
-            with self.terminal:
-                while True:
-                    # Clear screen and re-render
-                    os.system('clear' if os.name == 'posix' else 'cls')
+            # Simple interactive mode without complex terminal handling
+            while True:
+                # Clear screen and re-render
+                os.system('clear' if os.name == 'posix' else 'cls')
+                
+                # Show current state
+                print(f"{colored('Interactive Sections:', Colors.HIGHLIGHT, bold=True)}")
+                print(colored(prompt, Colors.SECONDARY))
+                
+                # Render all sections
+                for section_id in sorted(self.sections.keys()):
+                    print(self.render_section(section_id))
+                
+                # Show controls
+                print(f"\n{colored('Controls:', Colors.INFO)}")
+                print(f"  {colored('SPACE', Colors.PRIMARY)} - Toggle section")
+                print(f"  {colored('ENTER', Colors.PRIMARY)} - Continue")
+                print(f"  {colored('Q', Colors.PRIMARY)} - Quit")
+                print(f"  {colored('1-9', Colors.PRIMARY)} - Toggle specific section")
+                
+                # Get user input
+                try:
+                    user_input = input(f"\n{colored('Command: ', Colors.PRIMARY)}").strip().lower()
                     
-                    # Show current state
-                    print(f"{colored('Interactive Sections:', Colors.HIGHLIGHT, bold=True)}")
-                    print(colored(prompt, Colors.SECONDARY))
-                    
-                    # Render all sections
-                    for section_id in sorted(self.sections.keys()):
-                        print(self.render_section(section_id))
-                    
-                    # Show controls
-                    print(f"\n{colored('Controls:', Colors.INFO)}")
-                    print(f"  {colored('SPACE', Colors.PRIMARY)} - Toggle section")
-                    print(f"  {colored('ENTER', Colors.PRIMARY)} - Continue")
-                    print(f"  {colored('Q', Colors.PRIMARY)} - Quit")
-                    
-                    # Get user input
-                    key = self.terminal.get_key()
-                    if key:
-                        if key == ' ':
-                            # Toggle first collapsible section
-                            for section_id in sorted(self.sections.keys()):
-                                if self.sections[section_id]['collapsible']:
-                                    self.toggle_section(section_id)
-                                    break
-                        elif key == '\r' or key == '\n':  # Enter
-                            break
-                        elif key.lower() == 'q':
-                            return False
-                    
-                    time.sleep(0.1)  # Small delay for responsiveness
+                    if user_input == ' ' or user_input == 'space':
+                        # Toggle first collapsible section
+                        for section_id in sorted(self.sections.keys()):
+                            if self.sections[section_id]['collapsible']:
+                                self.toggle_section(section_id)
+                                break
+                    elif user_input == '' or user_input == 'enter':
+                        break
+                    elif user_input == 'q' or user_input == 'quit':
+                        return False
+                    elif user_input.isdigit():
+                        # Toggle specific section by number
+                        section_num = int(user_input)
+                        section_ids = sorted(self.sections.keys())
+                        if 1 <= section_num <= len(section_ids):
+                            section_id = section_ids[section_num - 1]
+                            if self.sections[section_id]['collapsible']:
+                                self.toggle_section(section_id)
+                    elif user_input == 'help':
+                        print(f"\n{colored('Section Commands:', Colors.INFO)}")
+                        print(f"  {colored('SPACE', Colors.PRIMARY)} - Toggle first collapsible section")
+                        print(f"  {colored('1-9', Colors.PRIMARY)} - Toggle section by number")
+                        print(f"  {colored('ENTER', Colors.PRIMARY)} - Continue to main CLI")
+                        print(f"  {colored('Q', Colors.PRIMARY)} - Quit interactive mode")
+                        input(f"\n{colored('Press ENTER to continue...', Colors.SECONDARY)}")
+                        
+                except KeyboardInterrupt:
+                    print(f"\n{colored('Interactive mode interrupted. Goodbye!', Colors.WARNING)}")
+                    return False
                     
         except Exception as e:
             print(f"Interactive mode error: {e}")
@@ -890,6 +909,8 @@ Available Commands:
 - 'help' - Show this help message
 - 'context' - Show project insights
 - 'interactive' - Enter collapsible section mode
+- 'toggle' - Toggle collapsible sections
+- 'demo' - Demonstrate collapsible sections
 - 'exit' or 'quit' - End the session
 
 Examples:
@@ -1011,6 +1032,12 @@ Pro Tips:
                     elif user_input.lower() == 'interactive':
                         self._enter_interactive_mode()
                         continue
+                    elif user_input.lower() == 'toggle':
+                        self._toggle_sections()
+                        continue
+                    elif user_input.lower() == 'demo':
+                        self._demo_collapsible_sections()
+                        continue
                     elif not user_input:
                         continue
                     
@@ -1049,6 +1076,43 @@ Pro Tips:
         
         # Start interactive rendering
         self.ui.interactive_render()
+    
+    def _toggle_sections(self):
+        """Toggle the expanded state of all collapsible sections."""
+        for section_id in sorted(self.ui.sections.keys()):
+            if self.ui.sections[section_id]['collapsible']:
+                self.ui.toggle_section(section_id)
+                print(f"Toggled section {section_id}")
+            else:
+                print(f"Section {section_id} is not collapsible.")
+
+    def _demo_collapsible_sections(self):
+        """Demonstrate collapsible sections by creating a few."""
+        print(self.ui.info("Demonstrating collapsible sections..."))
+        
+        # Create a few sections
+        self.ui.section("Section 1", "This is the content for Section 1. It can be long and detailed.", collapsible=True, expanded=False)
+        self.ui.section("Section 2", "This is the content for Section 2. It's shorter.", collapsible=True, expanded=True)
+        self.ui.section("Section 3", "This is the content for Section 3. It's also shorter.", collapsible=True, expanded=False)
+        self.ui.section("Non-collapsible Section", "This section cannot be collapsed.", collapsible=False, expanded=True)
+        
+        # Render them
+        print(self.ui.render_section(1))
+        print(self.ui.render_section(2))
+        print(self.ui.render_section(3))
+        print(self.ui.render_section(4))
+        
+        # Toggle some
+        self.ui.toggle_section(1)
+        self.ui.toggle_section(3)
+        
+        print(self.ui.render_section(1))
+        print(self.ui.render_section(2))
+        print(self.ui.render_section(3))
+        print(self.ui.render_section(4))
+        
+        print(self.ui.info("Press ENTER to continue..."))
+        input() # Wait for user input
 
     def _process_request(self, prompt: str):
         """Process a single user request with enhanced context awareness."""
