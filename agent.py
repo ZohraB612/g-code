@@ -92,12 +92,9 @@ class GeminiAgent:
                 result = func_to_call(**func_args)
                 print(f"RESULT:\n{result}")
 
-                # Send the result of the tool call back to the model for a final summary.
-                # In this version, we send the result as a simple text message
-                final_response = self.chat.send_message(f"Tool {func_name} returned: {result}")
+                # Tool execution complete - no need for additional API call
+                print(f"\nAGENT: Tool {func_name} completed successfully.")
                 
-                print("\nAGENT RESPONSE:")
-                print(final_response.text)
         else:
             print("\nAGENT: Task complete.")
 
