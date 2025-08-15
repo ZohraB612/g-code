@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Test script for gcode Autonomous Workflow capabilities.
-This demonstrates the end-to-end workflow execution like Claude Code.
+This demonstrates the end-to-end workflow execution.
 """
 
 import os

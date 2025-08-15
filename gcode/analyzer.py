@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Deep Codebase Analyzer for gcode - Builds semantic understanding of entire projects.
-This provides the "agentic search" capabilities that make Claude Code so powerful.
+This provides the "agentic search" capabilities that make gcode so powerful.
 """
 
 import os

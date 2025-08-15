@@ -143,7 +143,7 @@ def main():
         show_interactive_features()
         
         print("\n🎉 What This Means:")
-        print("  • gcode now has Claude Code-level workflow control")
+        print("  • gcode now has advanced workflow control")
         print("  • Users can see exactly what will happen before execution")
         print("  • Real-time progress tracking and status updates")
         print("  • Flexible execution modes for different use cases")

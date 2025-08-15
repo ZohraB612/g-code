@@ -910,7 +910,7 @@ def performance_profiling(file_path: str = None) -> str:
 def query_codebase(question: str) -> str:
     """
     Answers questions about the codebase using the knowledge graph.
-    This provides the "agentic search" capability that makes Claude Code powerful.
+    This provides the "agentic search" capability that makes gcode powerful.
     
     Args:
         question: The question to ask about the codebase.

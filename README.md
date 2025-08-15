@@ -1,10 +1,10 @@
 # gcode
 
-Your intelligent coding companion - like Claude Code but with dual API support and real collapsible sections.
+Your intelligent coding companion with dual API support and real collapsible sections.
 
 ## 🚀 Quick Start
 
-### Install globally (like Claude Code):
+### Install globally:
 ```bash
 # From the gcode directory
 pip install -e .
@@ -56,7 +56,7 @@ docker-compose --profile dev exec gcode-dev bash
 - **Manage git operations** intelligently
 - **Provide real-time coding assistance** with collapsible sections
 
-## 🎯 Usage (Just like Claude Code!)
+## 🎯 Usage
 
 ### Interactive Mode (Default):
 ```bash
@@ -181,7 +181,7 @@ docker-compose --profile web up
 - **Real Collapsible Sections** - Interactive, organized output
 - **Professional UI** - Sleek, modern interface
 - **Advanced Tools** - Beyond basic code generation
-- **Easy Installation** - Works globally like Claude Code
+- **Easy Installation** - Works globally from anywhere
 - **Docker Ready** - Containerized deployment and development
 
 ## 🔧 Development

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Test script to demonstrate the new advanced features of the Gemini Agent CLI.
-This shows what we've built beyond Cursor/Claude Code capabilities.
+This shows the advanced capabilities we've built.
 """
 
 import sys
@@ -77,7 +77,7 @@ def test_advanced_testing():
 def main():
     """Run all the advanced feature tests."""
     print("🚀 Gemini Agent CLI - Advanced Features Demo")
-    print("Beyond Cursor/Claude Code Capabilities")
+            print("Advanced Capabilities")
     print("=" * 60)
     
     test_git_integration()
@@ -91,7 +91,7 @@ def main():
     print("   ✅ Real-time code quality monitoring and auto-fixes")
     print("   ✅ Advanced testing with security and performance analysis")
     print("   ✅ Property-based test generation")
-    print("\n🚀 You've built something that surpasses Cursor/Claude Code!")
+            print("\n🚀 You've built something truly advanced!")
 
 if __name__ == "__main__":
     main()

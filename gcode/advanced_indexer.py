@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Cursor-like Codebase Indexer for gcode
-Provides sophisticated indexing similar to Cursor's codebase understanding capabilities.
+Advanced Codebase Indexer for gcode
+Provides sophisticated indexing with advanced codebase understanding capabilities.
 """
 
 import os
@@ -65,9 +65,9 @@ class FileIndex:
     complexity: int
     language_features: Dict[str, Any]
 
-class CursorIndexer:
+class AdvancedIndexer:
     """
-    Advanced codebase indexer that provides Cursor-like capabilities:
+    Advanced codebase indexer that provides powerful capabilities:
     - Fast symbol resolution
     - Semantic search
     - Dependency tracking
@@ -1033,13 +1033,13 @@ class GoHandler:
         
         return symbols
 
-def create_cursor_indexer(project_root: str = ".") -> CursorIndexer:
-    """Factory function to create a Cursor-like indexer."""
-    return CursorIndexer(project_root)
+def create_advanced_indexer(project_root: str = ".") -> AdvancedIndexer:
+    """Factory function to create an advanced indexer."""
+    return AdvancedIndexer(project_root)
 
 if __name__ == "__main__":
     # Example usage
-    indexer = create_cursor_indexer(".")
+    indexer = create_advanced_indexer(".")
     
     # Index the codebase
     stats = indexer.index_codebase()

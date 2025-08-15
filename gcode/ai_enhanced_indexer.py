@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-AI-Enhanced Indexer for gcode - Goes beyond Claude Code with semantic understanding.
+AI-Enhanced Indexer for gcode - Advanced semantic understanding.
 Features: embeddings, code similarity, intelligent suggestions, and AI-powered analysis.
 """
 
@@ -42,7 +42,7 @@ try:
 except ImportError:
     EMBEDDINGS_AVAILABLE = False
 
-from .cursor_indexer import CursorIndexer, Symbol, create_cursor_indexer
+from .advanced_indexer import AdvancedIndexer, Symbol, create_advanced_indexer
 
 logger = logging.getLogger(__name__)
 
@@ -79,9 +79,9 @@ class CodeAnalysis:
     maintainability_score: float
     technical_debt: float
 
-class AIEnhancedIndexer(CursorIndexer):
+class AIEnhancedIndexer(AdvancedIndexer):
     """
-    AI-enhanced indexer that provides capabilities beyond Claude Code:
+            AI-enhanced indexer that provides advanced capabilities:
     - Semantic code understanding with embeddings
     - AI-powered code suggestions and improvements
     - Code similarity detection

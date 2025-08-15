@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-AI-Enhanced CLI for gcode - Goes beyond Claude Code with intelligent analysis.
+AI-Enhanced CLI for gcode - Advanced intelligent analysis.
 Features: semantic search, code suggestions, quality analysis, and AI-powered insights.
 """
 
@@ -64,7 +64,7 @@ class AICLI:
     def _create_parser(self) -> argparse.ArgumentParser:
         """Create the argument parser for AI-enhanced features."""
         parser = argparse.ArgumentParser(
-            description="AI-Enhanced codebase analyzer for gcode - Beyond Claude Code",
+            description="AI-Enhanced codebase analyzer for gcode",
             formatter_class=argparse.RawDescriptionHelpFormatter,
             epilog="""
 Examples:

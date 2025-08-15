@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-CLI interface for the Cursor-like indexing system.
+CLI interface for the advanced indexing system.
 Provides commands for indexing, searching, and analyzing codebases.
 """
 
@@ -11,14 +11,14 @@ from typing import List, Optional
 import json
 from tabulate import tabulate
 
-from .cursor_indexer import create_cursor_indexer, Symbol
+from .advanced_indexer import create_advanced_indexer, Symbol
 
 class IndexCLI:
-    """Command-line interface for the Cursor-like indexer."""
+    """Command-line interface for the advanced indexer."""
     
     def __init__(self, project_root: str = "."):
         self.project_root = Path(project_root).resolve()
-        self.indexer = create_cursor_indexer(str(self.project_root))
+        self.indexer = create_advanced_indexer(str(self.project_root))
     
     def run(self, args: List[str]) -> int:
         """Run the CLI with the given arguments."""
@@ -54,7 +54,7 @@ class IndexCLI:
     def _create_parser(self) -> argparse.ArgumentParser:
         """Create the argument parser."""
         parser = argparse.ArgumentParser(
-            description="Cursor-like codebase indexer for gcode",
+            description="Advanced codebase indexer for gcode",
             formatter_class=argparse.RawDescriptionHelpFormatter,
             epilog="""
 Examples:

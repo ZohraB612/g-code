@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Gemini Agent CLI - A Cursor/Claude Code-like coding assistant
+Gemini Agent CLI - A powerful coding assistant
 """
 
 from .agent import main

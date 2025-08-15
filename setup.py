@@ -20,7 +20,7 @@ setup(
     version="1.0.0",
     author="Your Name",
     author_email="your.email@example.com",
-    description="Your intelligent coding companion - like Claude Code but with dual API support",
+    description="Your intelligent coding companion with dual API support",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/yourusername/gcode",

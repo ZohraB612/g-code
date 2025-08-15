@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Test script for gcode Deep Codebase Understanding.
-This demonstrates the "agentic search" capabilities that make Claude Code powerful.
+This demonstrates the "agentic search" capabilities that make gcode powerful.
 """
 
 import os
@@ -135,7 +135,7 @@ def show_usage_examples():
     print("\n4. Analyze specific file:")
     print("   gcode 'analyze gcode/agent.py'")
     
-    print("\n🚀 This gives you Claude Code-level understanding!")
+            print("\n🚀 This gives you advanced understanding!")
 
 def main():
     """Run the deep understanding test suite."""
