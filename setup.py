@@ -46,6 +46,8 @@ setup(
     entry_points={
         "console_scripts": [
             "gcode=gcode.agent:main",
+            "gcode-index=gcode.index_cli:main",
+            "gcode-ai=gcode.ai_cli:main",
         ],
     },
     include_package_data=True,
